@@ -421,7 +421,7 @@ const translations = {
     transcript_strip_title: "Transkrip Nilai Akademik",
     transcript_strip_sub: "",
     btn_view_transcript_sm: "Lihat",
-    btn_download_cv: "Unduh Curriculum Vitae (PDF)",
+    btn_download_cv: "Pratinjau Curriculum Vitae (PDF)",
     btn_full_profile: "Profil Lengkap",
     btn_view_projects: "Eksplorasi Proyek",
     btn_contact_me: "Kontak Resmi",
@@ -716,7 +716,7 @@ const translations = {
     transcript_strip_title: "Academic Grade Transcript",
     transcript_strip_sub: "",
     btn_view_transcript_sm: "View",
-    btn_download_cv: "Download Curriculum Vitae (PDF)",
+    btn_download_cv: "Preview Curriculum Vitae (PDF)",
     btn_full_profile: "Full Profile",
     btn_view_projects: "Explore Projects",
     btn_contact_me: "Official Contact",
@@ -1451,7 +1451,7 @@ function renderDocumentViewerModal(docKey) {
   const doc = portfolioDocuments[docKey] || portfolioDocuments.resume;
   
   const modalTitle = isEn ? "Official Document & CV Preview" : "Pratinjau Resume & Curriculum Vitae Resmi";
-  const btnOpenTab = isEn ? "Unduh / Buka File PDF Ini" : "Unduh / Buka Berkas PDF Ini";
+  const btnOpenTab = isEn ? "Buka Pratinjau PDF di Tab Baru" : "Buka Pratinjau PDF di Tab Baru";
   const btnCerts = isEn ? "Buka Seluruh Berkas Sertifikat Lengkap (PDF Terpadu)" : "Buka Seluruh Berkas Sertifikat Lengkap (PDF Terpadu)";
 
   const content = `
@@ -1464,7 +1464,7 @@ function renderDocumentViewerModal(docKey) {
 
     <h3 style="font-size: 1.5rem; margin-bottom: 4px; color: var(--text-main); font-weight: 700;">${modalTitle}</h3>
     <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">
-      ${isEn ? "Select document format below to view live PDF preview or download official copy." : "Pilih format dokumen di bawah ini untuk melihat pratinjau PDF langsung atau mengunduh salinan resmi."}
+      ${isEn ? "Select document format below to view live PDF preview directly in browser." : "Pilih format dokumen di bawah ini untuk melihat pratinjau PDF secara langsung."}
     </p>
 
     <!-- Document Selection Tabs -->
@@ -1497,7 +1497,7 @@ function renderDocumentViewerModal(docKey) {
     <div style="position: relative; width: 100%; height: 460px; background: #ffffff; border: 2px solid var(--border-color); border-radius: var(--radius-md); overflow: hidden; margin-bottom: 16px; box-shadow: var(--shadow-card);">
       <iframe src="${doc.file}#toolbar=0&navpanes=0" width="100%" height="100%" style="border: none;" title="${doc.titleId}">
         <p style="padding: 20px; text-align: center; color: var(--text-muted);">
-          Perangkat Anda tidak mendukung pratinjau PDF langsung. <a href="${doc.file}" target="_blank" style="color: var(--primary); font-weight: 700;">Klik di sini untuk mengunduh PDF (${doc.pages})</a>.
+          Perangkat Anda tidak mendukung pratinjau PDF langsung. <a href="${doc.file}" target="_blank" style="color: var(--primary); font-weight: 700;">Klik di sini untuk membuka pratinjau PDF (${doc.pages})</a>.
         </p>
       </iframe>
     </div>
@@ -1505,7 +1505,7 @@ function renderDocumentViewerModal(docKey) {
     <!-- Action Buttons -->
     <div style="display: flex; flex-direction: column; gap: 10px;">
       <a href="${doc.file}" target="_blank" rel="noopener" class="btn-tactile btn-primary-tactile" style="width: 100%; justify-content: center; text-decoration: none;">
-        <i data-lucide="download"></i> ${btnOpenTab} (${doc.pages})
+        <i data-lucide="eye"></i> ${btnOpenTab} (${doc.pages})
       </a>
       <a href="certificates/sertifikat-lengkap-muhammad-danendra.pdf" target="_blank" rel="noopener" class="btn-tactile btn-secondary-tactile" style="width: 100%; justify-content: center; text-decoration: none;">
         <i data-lucide="file-archive"></i> ${btnCerts}

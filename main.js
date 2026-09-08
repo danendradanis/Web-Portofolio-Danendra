@@ -1302,10 +1302,19 @@ function initCertFilters() {
 // ==========================================================================
 // 10. UNIVERSAL MODAL HANDLER
 // ==========================================================================
-function openModalWithHTML(htmlContent) {
+function openModalWithHTML(htmlContent, isLarge = false) {
   const modalBackdrop = document.getElementById('universalModalBackdrop');
   const modalDynamicBody = document.getElementById('modalDynamicBody');
+  const modalContentCard = modalBackdrop ? modalBackdrop.querySelector('.modal-content-card') : null;
   if (!modalBackdrop || !modalDynamicBody) return;
+
+  if (modalContentCard) {
+    if (isLarge) {
+      modalContentCard.classList.add('modal-lg');
+    } else {
+      modalContentCard.classList.remove('modal-lg');
+    }
+  }
 
   modalDynamicBody.innerHTML = htmlContent;
   modalBackdrop.classList.add('active');
@@ -1389,37 +1398,122 @@ function openCertDetailsModal(certId) {
   openModalWithHTML(content);
 }
 
-// Modal: Resume Preview & Complete Certificate Dossier
-function openResumeModal() {
+// Dataset PDF Resume & 2 CV Resmi
+const portfolioDocuments = {
+  resume: {
+    key: 'resume',
+    badgeId: 'RESUME RESMI (1 HALAMAN)',
+    badgeEn: 'OFFICIAL RESUME (1 PAGE)',
+    titleId: 'Resume Profesional (Singkat & Formal)',
+    titleEn: 'Professional Resume (Concise & Formal)',
+    subId: 'Ringkasan Eksekutif 1 Halaman • Single-Page Professional Layout',
+    subEn: 'Single-Page Executive Summary Layout',
+    file: 'assets/documents/resume-muhammad-danendra.pdf',
+    pages: '1 Halaman (Page)',
+    descId: 'Dokumen Resume 1 halaman yang merangkum Profil Profesional, Riwayat Pendidikan S1 Sistem Informasi (IPK 3.53), Kemampuan (Hard/Soft Skills), Proyek Utama, Pengalaman Event & Kerjasama, serta Sertifikasi.',
+    descEn: 'Formal 1-page Resume summarizing Executive Profile, B.S. Information Systems Education (GPA 3.53), Core Technical Skills, Key Projects, Event Experience, and Certifications.'
+  },
+  cv_formal: {
+    key: 'cv_formal',
+    badgeId: 'CV FORMAL / AKADEMIK (2 HALAMAN)',
+    badgeEn: 'FORMAL / ACADEMIC CV (2 PAGES)',
+    titleId: 'Curriculum Vitae Formal & Akademik',
+    titleEn: 'Formal & Academic Curriculum Vitae',
+    subId: 'Format Terperinci 2 Halaman • Standard Corporate & Academic Layout',
+    subEn: 'Detailed 2-Page Standard Corporate & Academic Layout',
+    file: 'assets/documents/cv-formal-muhammad-danendra.pdf',
+    pages: '2 Halaman (Pages)',
+    descId: 'Curriculum Vitae formal 2 halaman yang menyajikan rincian lengkap Pengalaman Event & Kerja (BPR Fun Walk, JFW, The Founder 5), Penulisan Ilmiah Proyek Izqy Kitchen, dan Daftar Sertifikasi.',
+    descEn: 'Detailed 2-page Formal CV presenting complete Event/Work Experience, Izqy Kitchen Web Project, and Full Certification Listing.'
+  },
+  cv_siapkerja: {
+    key: 'cv_siapkerja',
+    badgeId: 'CV SIAPKERJA KEMNAKER (2 HALAMAN)',
+    badgeEn: 'SIAPKERJA KEMNAKER CV (2 PAGES)',
+    titleId: 'Curriculum Vitae SIAPkerja Kemnaker',
+    titleEn: 'SIAPkerja Kemnaker Curriculum Vitae',
+    subId: 'Format Standar SIAPkerja Kemnaker RI • Visual Sidebar Layout',
+    subEn: 'Standard Kemnaker RI SIAPkerja Format with Visual Sidebar',
+    file: 'assets/documents/cv-siapkerja-muhammad-danendra.pdf',
+    pages: '2 Halaman (Pages)',
+    descId: 'Curriculum Vitae format standar SIAPkerja Kementerian Ketenagakerjaan RI dengan sidebar profil kontak, pencapaian, serta target kualifikasi bidang IT & Analisis Data.',
+    descEn: 'Standard Kemnaker RI SIAPkerja format featuring contact profile sidebar, achievements, and targeted IT/Data Analyst competencies.'
+  }
+};
+
+// Modal: Resume & 2 CV PDF Preview Viewer
+function openResumeModal(selectedDocKey = 'resume') {
+  renderDocumentViewerModal(selectedDocKey);
+}
+
+function renderDocumentViewerModal(docKey) {
   const isEn = currentLang === 'en';
-  const tag = isEn ? "OFFICIAL DOCUMENT" : "DOKUMEN RESMI";
-  const title = isEn ? "Curriculum Vitae & Official Document Preview" : "Pratinjau Curriculum Vitae & Dokumen Resmi";
-  const sub = isEn ? "Muhammad Danendra Daniswara Effendi • Bachelor of Science in Information Systems (GPA: 3.53 / 4.00)" : "Muhammad Danendra Daniswara Effendi • Sarjana Sistem Informasi (IPK: 3.53 / 4.00)";
-  const desc = isEn ? "Official Curriculum Vitae document covering complete academic background, technical qualifications, and professional track record." : "Dokumen Curriculum Vitae resmi yang mencakup riwayat akademik lengkap, rincian kualifikasi teknikal, dan rekam jejak profesional.";
-  const btnCv = isEn ? "Open Curriculum Vitae (PDF)" : "Buka Berkas Curriculum Vitae (PDF)";
-  const btnCerts = isEn ? "Open Complete Certificate Dossier (Combined PDF)" : "Buka Seluruh Berkas Sertifikat Lengkap (PDF Terpadu)";
+  const doc = portfolioDocuments[docKey] || portfolioDocuments.resume;
+  
+  const modalTitle = isEn ? "Official Document & CV Preview" : "Pratinjau Resume & Curriculum Vitae Resmi";
+  const btnOpenTab = isEn ? "Unduh / Buka File PDF Ini" : "Unduh / Buka Berkas PDF Ini";
+  const btnCerts = isEn ? "Buka Seluruh Berkas Sertifikat Lengkap (PDF Terpadu)" : "Buka Seluruh Berkas Sertifikat Lengkap (PDF Terpadu)";
 
   const content = `
-    <span class="cert-badge-tag" style="margin-bottom: 8px; display: inline-block;">${tag}</span>
-    <h3 style="font-size: 1.6rem; margin-bottom: 6px; color: var(--text-main);">${title}</h3>
-    <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 18px;">${sub}</p>
-
-    <div style="aspect-ratio: 1/0.95; background: var(--bg-elevated); border: 2px dashed var(--border-color); border-radius: var(--radius-lg); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; margin-bottom: 20px; padding: 20px; text-align: center;">
-      <i data-lucide="file-text" style="width: 48px; height: 48px; color: var(--primary);"></i>
-      <span style="font-weight: 800; font-size: 1.1rem;">[OFFICIAL_CV_FILE.PDF]</span>
-      <p style="font-size: 0.85rem; color: var(--text-muted); max-width: 320px;">${desc}</p>
+    <div style="margin-bottom: 10px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+      <span class="cert-badge-tag">${isEn ? doc.badgeEn : doc.badgeId}</span>
+      <span style="font-size: 0.775rem; font-weight: 700; color: var(--text-muted); background: var(--bg-elevated); padding: 4px 10px; border-radius: var(--radius-full); border: 1px solid var(--border-color);">
+        <i data-lucide="layers" style="width: 12px; height: 12px; display: inline-block; vertical-align: middle;"></i> ${doc.pages}
+      </span>
     </div>
 
-    <div style="display: flex; flex-direction: column; gap: 10px;">
-      <button class="btn-tactile btn-primary-tactile" style="width: 100%; justify-content: center;" onclick="handlePlaceholderAction(event, '${isEn ? "Open CV File [CV_URL]" : "Buka Berkas [CV_URL]"}')">
-        <i data-lucide="external-link"></i> ${btnCv}
+    <h3 style="font-size: 1.5rem; margin-bottom: 4px; color: var(--text-main); font-weight: 700;">${modalTitle}</h3>
+    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">
+      ${isEn ? "Select document format below to view live PDF preview or download official copy." : "Pilih format dokumen di bawah ini untuk melihat pratinjau PDF langsung atau mengunduh salinan resmi."}
+    </p>
+
+    <!-- Document Selection Tabs -->
+    <div class="transcript-tab-container" style="margin-bottom: 16px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
+      <button type="button" class="transcript-tab-btn ${docKey === 'resume' ? 'active' : ''}" onclick="renderDocumentViewerModal('resume')">
+        <i data-lucide="file-text" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; margin-right: 4px;"></i> ${isEn ? "Resume (1 Page)" : "Resume (1 Halaman)"}
       </button>
-      <a href="certificates/sertifikat-lengkap-muhammad-danendra.pdf" target="_blank" class="btn-tactile btn-secondary-tactile" style="width: 100%; justify-content: center; text-decoration: none;">
+      <button type="button" class="transcript-tab-btn ${docKey === 'cv_formal' ? 'active' : ''}" onclick="renderDocumentViewerModal('cv_formal')">
+        <i data-lucide="file-check" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; margin-right: 4px;"></i> ${isEn ? "CV Formal (2 Pages)" : "CV Formal (2 Halaman)"}
+      </button>
+      <button type="button" class="transcript-tab-btn ${docKey === 'cv_siapkerja' ? 'active' : ''}" onclick="renderDocumentViewerModal('cv_siapkerja')">
+        <i data-lucide="award" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; margin-right: 4px;"></i> ${isEn ? "CV SIAPkerja (Visual)" : "CV SIAPkerja (Visual)"}
+      </button>
+    </div>
+
+    <!-- Active Document Metadata Card -->
+    <div style="background: var(--bg-elevated); border: 1.5px solid var(--border-color); border-radius: var(--radius-md); padding: 12px 16px; margin-bottom: 14px;">
+      <h4 style="font-size: 0.975rem; font-weight: 700; color: var(--text-main); margin-bottom: 2px;">
+        ${isEn ? doc.titleEn : doc.titleId}
+      </h4>
+      <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 6px;">
+        ${isEn ? doc.subEn : doc.subId}
+      </p>
+      <p style="font-size: 0.825rem; color: var(--text-muted); line-height: 1.45; text-align: left;">
+        ${isEn ? doc.descEn : doc.descId}
+      </p>
+    </div>
+
+    <!-- Live PDF Preview Viewer -->
+    <div style="position: relative; width: 100%; height: 460px; background: #ffffff; border: 2px solid var(--border-color); border-radius: var(--radius-md); overflow: hidden; margin-bottom: 16px; box-shadow: var(--shadow-card);">
+      <iframe src="${doc.file}#toolbar=0&navpanes=0" width="100%" height="100%" style="border: none;" title="${doc.titleId}">
+        <p style="padding: 20px; text-align: center; color: var(--text-muted);">
+          Perangkat Anda tidak mendukung pratinjau PDF langsung. <a href="${doc.file}" target="_blank" style="color: var(--primary); font-weight: 700;">Klik di sini untuk mengunduh PDF (${doc.pages})</a>.
+        </p>
+      </iframe>
+    </div>
+
+    <!-- Action Buttons -->
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <a href="${doc.file}" target="_blank" rel="noopener" class="btn-tactile btn-primary-tactile" style="width: 100%; justify-content: center; text-decoration: none;">
+        <i data-lucide="download"></i> ${btnOpenTab} (${doc.pages})
+      </a>
+      <a href="certificates/sertifikat-lengkap-muhammad-danendra.pdf" target="_blank" rel="noopener" class="btn-tactile btn-secondary-tactile" style="width: 100%; justify-content: center; text-decoration: none;">
         <i data-lucide="file-archive"></i> ${btnCerts}
       </a>
     </div>
   `;
-  openModalWithHTML(content);
+
+  openModalWithHTML(content, true);
 }
 
 // ==========================================================================

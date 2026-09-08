@@ -1853,6 +1853,10 @@ html[data-theme="dark"] .live-status-pill {
   transition: transform 0.25s ease;
 }
 
+.modal-content-card.modal-lg {
+  max-width: 860px;
+}
+
 .modal-backdrop.active .modal-content-card {
   transform: translateY(0);
 }

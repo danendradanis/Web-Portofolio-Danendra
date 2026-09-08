@@ -1409,7 +1409,8 @@ const portfolioDocuments = {
     subId: 'Ringkasan Eksekutif 1 Halaman • Single-Page Professional Layout',
     subEn: 'Single-Page Executive Summary Layout',
     file: 'assets/documents/resume-muhammad-danendra.pdf',
-    pages: '1 Halaman (Page)',
+    pagesId: '1 Halaman',
+    pagesEn: '1 Page',
     descId: 'Dokumen Resume 1 halaman yang merangkum Profil Profesional, Riwayat Pendidikan S1 Sistem Informasi (IPK 3.53), Kemampuan (Hard/Soft Skills), Proyek Utama, Pengalaman Event & Kerjasama, serta Sertifikasi.',
     descEn: 'Formal 1-page Resume summarizing Executive Profile, B.S. Information Systems Education (GPA 3.53), Core Technical Skills, Key Projects, Event Experience, and Certifications.'
   },
@@ -1422,7 +1423,8 @@ const portfolioDocuments = {
     subId: 'Format Terperinci 2 Halaman • Standard Corporate & Academic Layout',
     subEn: 'Detailed 2-Page Standard Corporate & Academic Layout',
     file: 'assets/documents/cv-formal-muhammad-danendra.pdf',
-    pages: '2 Halaman (Pages)',
+    pagesId: '2 Halaman',
+    pagesEn: '2 Pages',
     descId: 'Curriculum Vitae formal 2 halaman yang menyajikan rincian lengkap Pengalaman Event & Kerja (BPR Fun Walk, JFW, The Founder 5), Penulisan Ilmiah Proyek Izqy Kitchen, dan Daftar Sertifikasi.',
     descEn: 'Detailed 2-page Formal CV presenting complete Event/Work Experience, Izqy Kitchen Web Project, and Full Certification Listing.'
   },
@@ -1435,7 +1437,8 @@ const portfolioDocuments = {
     subId: 'Format Standar SIAPkerja Kemnaker RI • Visual Sidebar Layout',
     subEn: 'Standard Kemnaker RI SIAPkerja Format with Visual Sidebar',
     file: 'assets/documents/cv-siapkerja-muhammad-danendra.pdf',
-    pages: '2 Halaman (Pages)',
+    pagesId: '2 Halaman',
+    pagesEn: '2 Pages',
     descId: 'Curriculum Vitae format standar SIAPkerja Kementerian Ketenagakerjaan RI dengan sidebar profil kontak, pencapaian, serta target kualifikasi bidang IT & Analisis Data.',
     descEn: 'Standard Kemnaker RI SIAPkerja format featuring contact profile sidebar, achievements, and targeted IT/Data Analyst competencies.'
   }
@@ -1451,14 +1454,15 @@ function renderDocumentViewerModal(docKey) {
   const doc = portfolioDocuments[docKey] || portfolioDocuments.resume;
   
   const modalTitle = isEn ? "Official Document & CV Preview" : "Pratinjau Resume & Curriculum Vitae Resmi";
-  const btnOpenTab = isEn ? "Buka Pratinjau PDF di Tab Baru" : "Buka Pratinjau PDF di Tab Baru";
-  const btnCerts = isEn ? "Buka Seluruh Berkas Sertifikat Lengkap (PDF Terpadu)" : "Buka Seluruh Berkas Sertifikat Lengkap (PDF Terpadu)";
+  const btnOpenTab = isEn ? "Open PDF Preview in New Tab" : "Buka Pratinjau PDF di Tab Baru";
+  const btnCerts = isEn ? "Open Complete Certificate Dossier (Combined PDF)" : "Buka Seluruh Berkas Sertifikat Lengkap (PDF Terpadu)";
+  const pagesText = isEn ? doc.pagesEn : doc.pagesId;
 
   const content = `
     <div style="margin-bottom: 10px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
       <span class="cert-badge-tag">${isEn ? doc.badgeEn : doc.badgeId}</span>
       <span style="font-size: 0.775rem; font-weight: 700; color: var(--text-muted); background: var(--bg-elevated); padding: 4px 10px; border-radius: var(--radius-full); border: 1px solid var(--border-color);">
-        <i data-lucide="layers" style="width: 12px; height: 12px; display: inline-block; vertical-align: middle;"></i> ${doc.pages}
+        <i data-lucide="layers" style="width: 12px; height: 12px; display: inline-block; vertical-align: middle;"></i> ${pagesText}
       </span>
     </div>
 
@@ -1495,9 +1499,9 @@ function renderDocumentViewerModal(docKey) {
 
     <!-- Live PDF Preview Viewer -->
     <div style="position: relative; width: 100%; height: 460px; background: #ffffff; border: 2px solid var(--border-color); border-radius: var(--radius-md); overflow: hidden; margin-bottom: 16px; box-shadow: var(--shadow-card);">
-      <iframe src="${doc.file}#toolbar=0&navpanes=0" width="100%" height="100%" style="border: none;" title="${doc.titleId}">
+      <iframe src="${doc.file}#toolbar=0&navpanes=0" width="100%" height="100%" style="border: none;" title="${isEn ? doc.titleEn : doc.titleId}">
         <p style="padding: 20px; text-align: center; color: var(--text-muted);">
-          Perangkat Anda tidak mendukung pratinjau PDF langsung. <a href="${doc.file}" target="_blank" style="color: var(--primary); font-weight: 700;">Klik di sini untuk membuka pratinjau PDF (${doc.pages})</a>.
+          ${isEn ? "Your device does not support inline PDF preview." : "Perangkat Anda tidak mendukung pratinjau PDF langsung."} <a href="${doc.file}" target="_blank" style="color: var(--primary); font-weight: 700;">${isEn ? "Click here to open PDF preview" : "Klik di sini untuk membuka pratinjau PDF"} (${pagesText})</a>.
         </p>
       </iframe>
     </div>
@@ -1505,7 +1509,7 @@ function renderDocumentViewerModal(docKey) {
     <!-- Action Buttons -->
     <div style="display: flex; flex-direction: column; gap: 10px;">
       <a href="${doc.file}" target="_blank" rel="noopener" class="btn-tactile btn-primary-tactile" style="width: 100%; justify-content: center; text-decoration: none;">
-        <i data-lucide="eye"></i> ${btnOpenTab} (${doc.pages})
+        <i data-lucide="eye"></i> ${btnOpenTab} (${pagesText})
       </a>
       <a href="certificates/sertifikat-lengkap-muhammad-danendra.pdf" target="_blank" rel="noopener" class="btn-tactile btn-secondary-tactile" style="width: 100%; justify-content: center; text-decoration: none;">
         <i data-lucide="file-archive"></i> ${btnCerts}

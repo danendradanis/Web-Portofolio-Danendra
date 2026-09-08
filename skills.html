@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Capability Vault & Matriks Teknologi Muhammad Danendra Daniswara Effendi — Keahlian dalam Web Development, Data Analytics, Python, Go-Lang, MySQL, dan AI.">
+  <meta name="keywords" content="Muhammad Danendra Daniswara Effendi, Skills, Keahlian, Web Developer, PHP, CodeIgniter 4, Python, MySQL, Go-Lang, Data Analyst">
+  <meta name="author" content="Muhammad Danendra Daniswara Effendi">
+  
+  <title>Skills & Capability Vault — Muhammad Danendra Daniswara Effendi</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Centralized Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Sticky Floating Navbar -->
+  <div class="nav-wrapper">
+    <header class="navbar-card">
+      <a href="index.html" class="logo-link" aria-label="Muhammad Danendra Daniswara Effendi Homepage">
+        <div class="logo-container">
+          <div class="logo-text-default">danendra<span class="logo-dot">.</span></div>
+          <div class="logo-text-hover">daniswara<span class="logo-dot">.</span></div>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="nav-item" data-i18n="nav_home">Home</a>
+        <a href="about.html" class="nav-item" data-i18n="nav_about">About</a>
+        <a href="skills.html" class="nav-item active" data-i18n="nav_skills">Skills</a>
+        <a href="projects.html" class="nav-item" data-i18n="nav_projects">Projects</a>
+        <a href="experience.html" class="nav-item" data-i18n="nav_experience">Experience</a>
+        <a href="certifications.html" class="nav-item" data-i18n="nav_certs">Certificates</a>
+        <a href="contact.html" class="nav-item" data-i18n="nav_contact">Contact</a>
+      </nav>
+
+      <div class="nav-controls">
+        <!-- Language Switcher Dropdown -->
+        <div class="lang-dropdown-wrapper">
+          <button class="control-btn" id="langToggleBtn" title="Konfirmasi & Pilih Bahasa" aria-label="Select Language">
+            <span id="langDisplayBadge" style="display: flex; align-items: center; justify-content: center;">
+              <svg width="20" height="20" viewBox="0 0 24 24" style="border-radius: 50%; overflow: hidden; display: block; box-shadow: 0 1px 3px rgba(0,0,0,0.25); border: 1px solid rgba(128,128,128,0.3);"><rect width="24" height="12" fill="#E70011"/><rect y="12" width="24" height="12" fill="#FFFFFF"/></svg>
+            </span>
+          </button>
+          <div class="lang-dropdown-menu" id="langDropdownMenu">
+            <button type="button" class="lang-option-btn active" data-lang="id" onclick="selectLanguage('id')">
+              <span class="flag-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" style="border-radius: 50%; overflow: hidden; display: block; box-shadow: 0 1px 3px rgba(0,0,0,0.25); border: 1px solid rgba(128,128,128,0.3);"><rect width="24" height="12" fill="#E70011"/><rect y="12" width="24" height="12" fill="#FFFFFF"/></svg>
+              </span>
+              <span class="lang-name">Indonesia</span>
+              <i data-lucide="check" class="lang-check-icon"></i>
+            </button>
+            <button type="button" class="lang-option-btn" data-lang="en" onclick="selectLanguage('en')">
+              <span class="flag-circle">
+                <svg width="20" height="20" viewBox="0 0 60 60" style="border-radius: 50%; overflow: hidden; display: block; box-shadow: 0 1px 3px rgba(0,0,0,0.25); border: 1px solid rgba(128,128,128,0.3);"><clipPath id="ukClipOpt3"><circle cx="30" cy="30" r="30"/></clipPath><g clip-path="url(#ukClipOpt3)"><rect width="60" height="60" fill="#012169"/><path d="M0 0 L60 60 M60 0 L0 60" stroke="#FFFFFF" stroke-width="9"/><path d="M0 0 L60 60 M60 0 L0 60" stroke="#C8102E" stroke-width="5"/><path d="M30 0 V60 M0 30 H60" stroke="#FFFFFF" stroke-width="14"/><path d="M30 0 V60 M0 30 H60" stroke="#C8102E" stroke-width="8"/></g></svg>
+              </span>
+              <span class="lang-name">English</span>
+              <i data-lucide="check" class="lang-check-icon"></i>
+            </button>
+          </div>
+        </div>
+
+        <button class="control-btn" id="themeToggleBtn" title="Alihkan Tema Gelap/Terang" aria-label="Toggle Theme">
+          <i data-lucide="moon" id="themeIcon"></i>
+        </button>
+
+        <button class="control-btn mobile-menu-btn" id="mobileMenuToggle" aria-label="Buka Navigasi Seluler">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </header>
+  </div>
+
+  <main class="container section">
+    
+    <!-- Page Header Banner -->
+    <div class="page-header-banner">
+      <div class="page-header-content">
+        <div class="page-breadcrumb">
+          <span>Home</span>
+          <i data-lucide="chevron-right" style="width: 14px; height: 14px;"></i>
+          <span data-i18n="skills_page_breadcrumb">Matriks Kualifikasi Teknis</span>
+        </div>
+        <h1 class="page-title" data-i18n="skills_page_title">Matriks Kualifikasi Teknis & Penguasaan Teknologi</h1>
+        <p class="page-subtitle" data-i18n="skills_page_sub">
+          Katalog kompetensi teknikal terverifikasi, kerangka kerja rekayasa piranti lunak, alat analitik data, dan kapabilitas profesional.
+        </p>
+      </div>
+      <div>
+        <a href="projects.html" class="btn-tactile btn-primary-tactile">
+          <i data-lucide="layout-grid"></i> <span data-i18n="btn_view_projects">Eksplorasi Proyek</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Capability Vault Main Section -->
+    <div class="skills-bento-container" style="margin-bottom: 24px;">
+      <div class="skills-header-row">
+        <div>
+          <span class="cert-badge-tag" style="margin-bottom: 8px; display: inline-block;" data-i18n="skills_dir_tag">DIREKTORI KOMPETENSI</span>
+          <h2 style="font-size: 1.85rem;" data-i18n="skills_heading">Matriks Kompetensi Terstruktur</h2>
+          <p style="font-size: 0.95rem; color: var(--text-muted);" data-i18n="skills_sub">
+            Telusuri instrumen teknologi dan kapabilitas berdasarkan domain keahlian melalui fitur pencarian langsung atau penyaringan kategori.
+          </p>
+        </div>
+
+        <!-- Real-Time Search Bar -->
+        <div class="skills-search-box">
+          <i data-lucide="search" style="width: 16px; height: 16px; color: var(--text-muted);"></i>
+          <input type="text" id="skillSearchInput" class="skills-search-input" placeholder="Pencarian kompetensi (Laravel, Django, PHP, Python, MySQL)..." data-i18n-placeholder="skills_search_ph" aria-label="Pencarian keahlian">
+        </div>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="skills-filter-tabs">
+        <button class="tab-pill-btn active" data-filter="all" data-i18n="filter_all_skills">Semua Domain (23)</button>
+        <button class="tab-pill-btn" data-filter="web" data-i18n="filter_web_skills">Rekayasa Web & Framework (8)</button>
+        <button class="tab-pill-btn" data-filter="data" data-i18n="filter_data_skills">Sains Data & Kecerdasan Buatan (6)</button>
+        <button class="tab-pill-btn" data-filter="tools" data-i18n="filter_tools_skills">Perangkat Kerja & DevOps (4)</button>
+        <button class="tab-pill-btn" data-filter="soft" data-i18n="filter_soft_skills">Kompetensi Interpersonal (5)</button>
+      </div>
+
+      <!-- Capability Matrix Grid -->
+      <div class="capability-matrix-grid" id="skillsCanvas">
+        <!-- Web & Programming -->
+        <div class="capability-card" data-category="web">
+          <div class="capability-icon-wrap"><i data-lucide="code"></i></div>
+          <div>
+            <div class="capability-name">PHP</div>
+            <div class="capability-tag" data-i18n="tag_php">Bahasa Pemrograman Backend</div>
+          </div>
+        </div>
+        <div class="capability-card" data-category="web">
+          <div class="capability-icon-wrap"><i data-lucide="layers"></i></div>
+          <div>
+            <div class="capability-name">Laravel</div>
+            <div class="capability-tag" data-i18n="tag_laravel">Kerangka Kerja PHP Modern & Ekosistem Web</div>
+          </div>
+        </div>
+        <div class="capability-card" data-category="web">
+          <div class="capability-icon-wrap"><i data-lucide="flame"></i></div>
+          <div>
+            <div class="capability-name">CodeIgniter 4</div>
+            <div class="capability-tag" data-i18n="tag_ci4">Kerangka Kerja MVC Terstruktur</div>
+          </div>
+        </div>
+        <div class="capability-card" data-category="web">
+          <div class="capability-icon-wrap"><i data-lucide="terminal"></i></div>
+          <div>
+            <div class="capability-name">Python</div>
+            <div class="capability-tag" data-i18n="tag_python">Pemrograman & Skrip Otomasi</div>
+          </div>
+        </div>
+        <div class="capability-card" data-category="web">
+          <div class="capability-icon-wrap"><i data-lucide="shield-check"></i></div>
+          <div>
+            <div class="capability-name">Django</div>
+            <div class="capability-tag" data-i18n="tag_django">Kerangka Kerja Python Skalabilitas Tinggi & API</div>
+          </div>
+        </div>
+        <div class="capability-card" data-category="web">
+          <div class="capability-icon-wrap"><i data-lucide="database"></i></div>
+          <div>
+            <div class="capability-name">MySQL</div>
+            <div class="capability-tag" data-i18n="tag_mysql">Tata Kelola Basis Data Relasional</div>
+          </div>
+        </div>
+        <div class="capability-card" data-category="web">
+          <div class="capability-icon-wrap"><i data-lucide="cpu"></i></div>
+          <div>
+            <div class="capability-name">Go-Lang</div>
+            <div class="capability-tag" data-i18n="tag_golang">Pemrograman Backend Berkinerja Tinggi</div>
+          </div>
+        </div>
+        <div class="capability-card" data-category="web">
+          <div class="capability-icon-wrap"><i data-lucide="globe"></i></div>
+          <div>
+            <div class="capability-name" data-i18n="name_webdev">Pengembangan Web</div>
+            <div class="capability-tag" data-i18n="tag_webdev">Arsitektur Web Responsif & Standar</div>
+          </div>
+        </div>
+        
+        <!-- Data & AI -->
+        <div class="capability-card" data-category="data">
+          <div class="capability-icon-wrap"><i data-lucide="hash"></i></div>
+          <div>
+            <div class="capability-name">NumPy</div>
+            <div class="capability-tag" data-i18n="tag_numpy">Komputasi Numerik Saintifik</div>
+          </div>
+        </div>
+        <div class="capability-card" data-category="data">
+          <div class="capability-icon-wrap"><i data-lucide="bar-chart-2"></i></div>
+          <div>
+            <div class="capability-name">Pandas</div>
+            <div class="capability-tag" data-i18n="tag_pandas">Manipulasi & Pembersihan Data</div>
+          </div>
+        </div>
+        <div class="capability-card" data-category="data">
+          <div class="capability-icon-wrap"><i data-lucide="brain"></i></div>
+          <div>
+            <div class="capability-name">TensorFlow</div>
+            <div class="capability-tag" data-i18n="tag_tf">Kerangka Kerja Pembelajaran Mesin</div>
+          </div>
+        </div>
+        <div class="capability-card" data-category="data">
+          <div class="capability-icon-wrap"><i data-lucide="activity"></i></div>
+          <div>
+            <div class="capability-name">PyTorch</div>
+            <div class="capability-tag" data-i18n="tag_pytorch">Pustaka Pembelajaran Mendalam</div>
+          </div>
+        </div>
+        <div class="capability-card" data-category="data">
+          <div class="capability-icon-wrap"><i data-lucide="trending-up"></i></div>
+          <div>
+            <div class="capability-name" data-i18n="name_data_analysis">Analisis Data</div>
+            <div class="capability-tag" data-i18n="tag_data_analysis">Wawasan Statistik Kuantitatif</div>
+          </div>
+        </div>
+        <div class="capability-card" data-category="data">
+          <div class="capability-icon-wrap"><i data-lucide="pie-chart"></i></div>
+          <div>
+            <div class="capability-name">Business Intelligence</div>
+            <div class="capability-tag" data-i18n="tag_bi">Pelaporan & Dukungan Keputusan Bisnis</div>
+          </div>
+        </div>
+
+        <!-- Tools & Environment -->
+        <div class="capability-card" data-category="tools">
+          <div class="capability-icon-wrap"><i data-lucide="file-spreadsheet"></i></div>
+          <div>
+            <div class="capability-name">Microsoft Office</div>
+            <div class="capability-tag" data-i18n="tag_msoffice">Dokumentasi & Pengolahan Data Kantor</div>
+          </div>
+        </div>
+        <div class="capability-card" data-category="tools">
+          <div class="capability-icon-wrap"><i data-lucide="server"></i></div>
+          <div>
+            <div class="capability-name">phpMyAdmin</div>
+            <div class="capability-tag" data-i18n="tag_phpmyadmin">Administrasi Basis Data Berbasis Web</div>
+          </div>
+        </div>
+        <div class="capability-card" data-category="tools">
+          <div class="capability-icon-wrap"><i data-lucide="monitor"></i></div>
+          <div>
+            <div class="capability-name">Visual Studio Code</div>
+            <div class="capability-tag" data-i18n="tag_vscode">Lingkungan Pengembangan Kode</div>
+          </div>
+        </div>
+        <div class="capability-card" data-category="tools">
+          <div class="capability-icon-wrap"><i data-lucide="git-branch"></i></div>
+          <div>
+            <div class="capability-name">Git & GitHub</div>
+            <div class="capability-tag" data-i18n="tag_git">Sistem Kontrol Versi Kolaboratif</div>
+          </div>
+        </div>
+
+        <!-- Professional Soft Skills -->
+        <div class="capability-card" data-category="soft">
+          <div class="capability-icon-wrap"><i data-lucide="lightbulb"></i></div>
+          <div>
+            <div class="capability-name" data-i18n="name_creative">Pemikiran Kreatif</div>
+            <div class="capability-tag" data-i18n="tag_creative">Inovasi Solutif Berkelanjutan</div>
+          </div>
+        </div>
+        <div class="capability-card" data-category="soft">
+          <div class="capability-icon-wrap"><i data-lucide="check-circle"></i></div>
+          <div>
+            <div class="capability-name" data-i18n="name_problem">Penyelesaian Masalah</div>
+            <div class="capability-tag" data-i18n="tag_problem">Resolusi Logis & Terstruktur</div>
+          </div>
+        </div>
+        <div class="capability-card" data-category="soft">
+          <div class="capability-icon-wrap"><i data-lucide="users"></i></div>
+          <div>
+            <div class="capability-name" data-i18n="name_team">Kolaborasi Tim</div>
+            <div class="capability-tag" data-i18n="tag_team">Sinergi Komunikasi Lintas Fungsi</div>
+          </div>
+        </div>
+        <div class="capability-card" data-category="soft">
+          <div class="capability-icon-wrap"><i data-lucide="compass"></i></div>
+          <div>
+            <div class="capability-name" data-i18n="name_lead">Kepemimpinan</div>
+            <div class="capability-tag" data-i18n="tag_lead">Inisiatif & Akuntabilitas Peran</div>
+          </div>
+        </div>
+        <div class="capability-card" data-category="soft">
+          <div class="capability-icon-wrap"><i data-lucide="shield"></i></div>
+          <div>
+            <div class="capability-name" data-i18n="name_discipline">Ketelitian & Disiplin</div>
+            <div class="capability-tag" data-i18n="tag_discipline">Presisi Detail & Integritas Kinerja</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Domain Mastery Deep-Dive Bento -->
+    <div class="bento-grid">
+      <div class="bento-card" style="grid-column: span 6;">
+        <span class="cert-badge-tag" style="margin-bottom: 8px; display: inline-block;" data-i18n="web_method_tag">METODOLOGI REKAYASA WEB</span>
+        <h3 style="font-size: 1.35rem; margin-bottom: 8px;" data-i18n="web_method_title">Arsitektur Web Modular & Tata Kelola Backend</h3>
+        <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.7;" data-i18n="web_method_desc">
+          Penerapan pola arsitektur Model-View-Controller (MVC/MVT) secara disiplin menggunakan kerangka kerja modern seperti Laravel, CodeIgniter 4, dan Django guna memastikan pemisahan tegas antara logika bisnis, perutean (routing), dan lapisan presentasi. Berfokus pada efisiensi kueri basis data MySQL, sanitasi data masukan guna mencegah kerentanan keamanan web fundamental, serta pemeliharaan standar kode yang terstruktur dan teruji.
+        </p>
+      </div>
+
+      <div class="bento-card" style="grid-column: span 6;">
+        <span class="cert-badge-tag" style="margin-bottom: 8px; display: inline-block;" data-i18n="data_method_tag">METODOLOGI PENGOLAHAN DATA</span>
+        <h3 style="font-size: 1.35rem; margin-bottom: 8px;" data-i18n="data_method_title">Pipeline Pengolahan, Pemodelan, & Analitik Data</h3>
+        <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.7;" data-i18n="data_method_desc">
+          Pemanfaatan ekosistem Python untuk standardisasi, pembersihan, dan penambangan wawasan berbasis data historis operasional. Memadukan eksplorasi data statistik dan visualisasi kuantitatif guna merumuskan rekomendasi manajerial berbasis bukti (<em>evidence-based decision making</em>) yang aplikatif bagi kebutuhan organisasi.
+        </p>
+      </div>
+    </div>
+
+    <!-- Expanded Modern Executive Footer -->
+    <div class="footer-wrapper">
+      <footer class="footer-expanded-card">
+        <div class="footer-top-grid">
+          
+          <!-- Left Column: Big Brand Name, Quote & 7 Social Media Icon Buttons -->
+          <div class="footer-brand-col">
+            <h3 class="footer-hero-name">Danendra Daniswara<span>.</span></h3>
+            <p class="footer-hero-quote">
+              the only way to do great work is to love what you do. — Steve Jobs
+            </p>
+            
+            <!-- 7 Social Media Buttons in Exact Orde            <!-- 7 Social Media Buttons in Exact Order -->
+            <div class="footer-social-row">
+              <!-- 1. GitHub -->
+              <a href="https://github.com/danendradanis" target="_blank" rel="noopener" class="footer-social-btn" title="GitHub (danendradanis)" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+              </a>
+
+              <!-- 2. LinkedIn -->
+              <a href="https://www.linkedin.com/in/muhammad-danendra-daniswara-effendi-56b58534b/" target="_blank" rel="noopener" class="footer-social-btn" title="LinkedIn (Muhammad Danendra Daniswara Effendi)" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                </svg>
+              </a>
+
+              <!-- 3. Instagram -->
+              <a href="https://www.instagram.com/danendrdns" target="_blank" rel="noopener" class="footer-social-btn" title="Instagram (@danendrdns)" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+                </svg>
+              </a>
+
+              <!-- 4. Threads -->
+              <a href="https://www.threads.net/@danendrdns" target="_blank" rel="noopener" class="footer-social-btn" title="Threads (@danendrdns)" aria-label="Threads">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M12.75 1.5c-5.7 0-10.5 4.8-10.5 10.5s4.8 10.5 10.5 10.5c3.2 0 6.1-1.4 8.1-3.7l-2.4-1.9c-1.5 1.7-3.6 2.7-5.7 2.7-4.2 0-7.5-3.3-7.5-7.5s3.3-7.5 7.5-7.5c4.1 0 7 2.8 7 7.4 0 2.3-1.1 3.7-2.6 3.7-1 0-1.7-.7-1.4-2l.9-4.2h-2.9l-.3 1.4c-.4-.9-1.3-1.4-2.4-1.4-2.5 0-4.4 2.3-4.4 4.8 0 2.2 1.6 3.9 3.7 3.9 1.3 0 2.4-.7 3-1.7.3 1.3 1.5 2.1 3 2.1 3.2 0 5.6-2.6 5.6-6.4 0-6.1-4.7-10.7-11.2-10.7zM11.9 15c-1 0-1.8-.8-1.8-1.9 0-1.2.9-2.1 2-2.1.9 0 1.7.7 1.7 1.8 0 1.3-.9 2.2-1.9 2.2z"/>
+                </svg>
+              </a>
+
+              <!-- 5. Telegram -->
+              <a href="https://t.me/+6285219465754" target="_blank" rel="noopener" class="footer-social-btn" title="Telegram (+6285219465754)" aria-label="Telegram">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18.25.25 0 0 0-.21-.02c-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.77-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+                </svg>
+              </a>
+
+              <!-- 6. X (Twitter) -->
+              <a href="https://x.com/deweeeeeeeeeeee" target="_blank" rel="noopener" class="footer-social-btn" title="X (@deweeeeeeeeeeee)" aria-label="X">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+              </a>
+
+              <!-- 7. Mail -->
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=muhdanendra12@gmail.com," target="_blank" rel="noopener" class="footer-social-btn" title="Kirim Email via Gmail (muhdanendra12@gmail.com)" aria-label="Email">
+                <i data-lucide="mail"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: 3 Nav Link Columns -->
+          <div class="footer-nav-grid">
+            <!-- Col 1: Pages -->
+            <div>
+              <h4 class="footer-col-title">Pages</h4>
+              <ul class="footer-col-links">
+                <li><a href="index.html" class="footer-col-link">Home</a></li>
+                <li><a href="about.html" class="footer-col-link">About</a></li>
+                <li><a href="skills.html" class="footer-col-link">Skills</a></li>
+                <li><a href="contact.html" class="footer-col-link">Contact</a></li>
+              </ul>
+            </div>
+
+            <!-- Col 2: Explore -->
+            <div>
+              <h4 class="footer-col-title">Explore</h4>
+              <ul class="footer-col-links">
+                <li><a href="projects.html" class="footer-col-link">Portfolio</a></li>
+                <li><a href="experience.html" class="footer-col-link">Experience</a></li>
+                <li><a href="certifications.html" class="footer-col-link">Certificates</a></li>
+                <li><button class="footer-col-link" onclick="openResumeModal()">Curriculum Vitae</button></li>
+              </ul>
+            </div>
+
+            <!-- Col 3: Connect -->
+            <div>
+              <h4 class="footer-col-title">Connect</h4>
+              <ul class="footer-col-links">
+                <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=muhdanendra12@gmail.com," target="_blank" rel="noopener" class="footer-col-link">Direct Email</a></li>
+                <li><a href="https://www.linkedin.com/in/muhammad-danendra-daniswara-effendi-56b58534b/" target="_blank" rel="noopener" class="footer-col-link">LinkedIn Profile</a></li>
+                <li><a href="https://github.com/danendradanis" target="_blank" rel="noopener" class="footer-col-link">GitHub Code</a></li>
+                <li><a href="contact.html" class="footer-col-link">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Footer Bottom Bar -->
+        <div class="footer-bottom-bar">
+          <div class="footer-bottom-copy">
+            © 2026 Muhammad Danendra Daniswara Effendi • S1 Sistem Informasi Universitas Gunadarma
+          </div>
+          <button class="footer-back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+            <i data-lucide="arrow-up" style="width: 14px; height: 14px;"></i> Back to Top
+          </button>
+        </div>
+      </footer>
+    </div>
+
+  </main>
+
+  <div class="toast-popup" id="toastPopup">
+    <i data-lucide="check-circle-2" style="color: var(--primary); width: 18px; height: 18px;"></i>
+    <span id="toastText">Notification</span>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

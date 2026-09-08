@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Profil akademik dan riwayat profesional Muhammad Danendra Daniswara Effendi — Lulusan S1 Sistem Informasi Universitas Gunadarma (IPK 3.53/4.00).">
+  <meta name="keywords" content="Muhammad Danendra Daniswara Effendi, Profil, Pendidikan, Universitas Gunadarma, Sistem Informasi, IPK 3.53">
+  <meta name="author" content="Muhammad Danendra Daniswara Effendi">
+  
+  <title>Profil Pribadi & Riwayat Pendidikan — Muhammad Danendra Daniswara Effendi</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Centralized Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Sticky Floating Navbar -->
+  <div class="nav-wrapper">
+    <header class="navbar-card">
+      <a href="index.html" class="logo-link" aria-label="Muhammad Danendra Daniswara Effendi">
+        <div class="logo-container">
+          <div class="logo-text-default">danendra<span class="logo-dot">.</span></div>
+          <div class="logo-text-hover">daniswara<span class="logo-dot">.</span></div>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="nav-item" data-i18n="nav_home">Home</a>
+        <a href="about.html" class="nav-item active" data-i18n="nav_about">About</a>
+        <a href="skills.html" class="nav-item" data-i18n="nav_skills">Skills</a>
+        <a href="projects.html" class="nav-item" data-i18n="nav_projects">Projects</a>
+        <a href="experience.html" class="nav-item" data-i18n="nav_experience">Experience</a>
+        <a href="certifications.html" class="nav-item" data-i18n="nav_certs">Certificates</a>
+        <a href="contact.html" class="nav-item" data-i18n="nav_contact">Contact</a>
+      </nav>
+
+      <div class="nav-controls">
+        <!-- Language Switcher Dropdown -->
+        <div class="lang-dropdown-wrapper">
+          <button class="control-btn" id="langToggleBtn" title="Konfirmasi & Pilih Bahasa" aria-label="Select Language">
+            <span id="langDisplayBadge" style="display: flex; align-items: center; justify-content: center;">
+              <svg width="20" height="20" viewBox="0 0 24 24" style="border-radius: 50%; overflow: hidden; display: block; box-shadow: 0 1px 3px rgba(0,0,0,0.25); border: 1px solid rgba(128,128,128,0.3);"><rect width="24" height="12" fill="#E70011"/><rect y="12" width="24" height="12" fill="#FFFFFF"/></svg>
+            </span>
+          </button>
+          <div class="lang-dropdown-menu" id="langDropdownMenu">
+            <button type="button" class="lang-option-btn active" data-lang="id" onclick="selectLanguage('id')">
+              <span class="flag-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" style="border-radius: 50%; overflow: hidden; display: block; box-shadow: 0 1px 3px rgba(0,0,0,0.25); border: 1px solid rgba(128,128,128,0.3);"><rect width="24" height="12" fill="#E70011"/><rect y="12" width="24" height="12" fill="#FFFFFF"/></svg>
+              </span>
+              <span class="lang-name">Indonesia</span>
+              <i data-lucide="check" class="lang-check-icon"></i>
+            </button>
+            <button type="button" class="lang-option-btn" data-lang="en" onclick="selectLanguage('en')">
+              <span class="flag-circle">
+                <svg width="20" height="20" viewBox="0 0 60 60" style="border-radius: 50%; overflow: hidden; display: block; box-shadow: 0 1px 3px rgba(0,0,0,0.25); border: 1px solid rgba(128,128,128,0.3);"><clipPath id="ukClipOpt2"><circle cx="30" cy="30" r="30"/></clipPath><g clip-path="url(#ukClipOpt2)"><rect width="60" height="60" fill="#012169"/><path d="M0 0 L60 60 M60 0 L0 60" stroke="#FFFFFF" stroke-width="9"/><path d="M0 0 L60 60 M60 0 L0 60" stroke="#C8102E" stroke-width="5"/><path d="M30 0 V60 M0 30 H60" stroke="#FFFFFF" stroke-width="14"/><path d="M30 0 V60 M0 30 H60" stroke="#C8102E" stroke-width="8"/></g></svg>
+              </span>
+              <span class="lang-name">English</span>
+              <i data-lucide="check" class="lang-check-icon"></i>
+            </button>
+          </div>
+        </div>
+
+        <button class="control-btn" id="themeToggleBtn" title="Mode Tampilan (Gelap/Terang)" aria-label="Ubah Tema">
+          <i data-lucide="moon" id="themeIcon"></i>
+        </button>
+
+        <button class="control-btn mobile-menu-btn" id="mobileMenuToggle" aria-label="Buka Menu Navigasi">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </header>
+  </div>
+
+  <main class="container section">
+    
+    <!-- Page Header Banner -->
+    <div class="page-header-banner">
+      <div class="page-header-content">
+        <div class="page-breadcrumb">
+          <span>Home</span>
+          <i data-lucide="chevron-right" style="width: 14px; height: 14px;"></i>
+          <span data-i18n="about_page_breadcrumb">Profil Akademik & Ringkasan Eksekutif</span>
+        </div>
+        <h1 class="page-title" data-i18n="about_page_title">Profil Pribadi & Riwayat Akademik</h1>
+        <p class="page-subtitle" data-i18n="about_page_sub">
+          Papar latar belakang pendidikan formal, kompetensi fungsional Sistem Informasi, serta prinsip kerja profesional yang melandasi rekayasa perangkat lunak dan analisis data terstruktur.
+        </p>
+      </div>
+      <div>
+        <button class="btn-tactile btn-primary-tactile" onclick="openResumeModal()">
+          <i data-lucide="file-text"></i> <span data-i18n="btn_download_cv">Unduh Curriculum Vitae (PDF)</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="bento-grid">
+
+      <!-- Academic Credentials Spotlight -->
+      <div class="bento-card" style="grid-column: span 12;">
+        <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 36px; align-items: center;">
+          <div>
+            <span class="cert-badge-tag" style="margin-bottom: 12px; display: inline-block;" data-i18n="about_edu_tag">PENDIDIKAN TINGGI FORMAL</span>
+            <h2 style="font-size: 1.95rem; margin-bottom: 12px; color: var(--text-main);" data-i18n="about_edu_title">Universitas Gunadarma</h2>
+            <div style="font-size: 1.1rem; font-weight: 700; color: var(--primary); margin-bottom: 16px;" data-i18n="about_edu_degree">
+              Strata 1 (S1) Sistem Informasi • Fakultas Ilmu Komputer & Teknologi Informasi
+            </div>
+
+            <p style="font-size: 1rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 16px;" data-i18n="about_edu_p1">
+              Menempuh pendidikan sarjana Sistem Informasi pada Fakultas Ilmu Komputer dan Teknologi Informasi Universitas Gunadarma dengan fokus studi integrasi teknologi perangkat lunak dan tata kelola proses bisnis organisasi. Kurikulum akademik yang diselesaikan mencakup rekayasa web berbasis MVC, arsitektur basis data relasional, manajemen proyek IT, Enterprise Resource Planning (ERP), sains data terapan, serta kecerdasan buatan.
+            </p>
+
+            <p style="font-size: 1rem; line-height: 1.8; color: var(--text-muted);" data-i18n="about_edu_p2">
+              Melalui dedikasi dan komitmen akademik yang konsisten, saya berhasil menyelesaikan seluruh beban kurikulum dengan capaian <strong>Indeks Prestasi Kumulatif (IPK) 3.53 dari skala 4.00 (74 Mata Kuliah)</strong>, merefleksikan kapasitas analitis yang kuat, ketelitian tinggi, serta penguasaan menyeluruh pada bidang keilmuan sistem informasi.
+            </p>
+          </div>
+
+          <div style="background: var(--bg-elevated); padding: 30px; border-radius: var(--radius-lg); border: 1.5px solid var(--border-color); text-align: center;">
+            <div class="executive-avatar-box" style="margin-bottom: 16px;">
+              <img src="assets/profile-red.jpg" alt="Muhammad Danendra Daniswara Effendi" class="executive-avatar-img">
+              <div class="executive-badge-float" title="Lulusan Terverifikasi">
+                <i data-lucide="check" style="width: 16px; height: 16px;"></i>
+              </div>
+            </div>
+            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); letter-spacing: 0.05em; text-transform: uppercase;" data-i18n="about_gpa_label">INDEKS PRESTASI KUMULATIF (IPK)</div>
+            <div style="font-size: 3rem; font-weight: 800; color: var(--text-main); font-family: var(--font-heading); margin: 4px 0;">3.53</div>
+            <span class="cert-badge-tag" style="font-size: 0.8rem; padding: 6px 16px;" data-i18n="about_gpa_tag">SKALA 4.00 • DISTINCTION</span>
+            
+            <div style="margin-top: 24px; text-align: left; display: flex; flex-direction: column; gap: 10px; font-size: 0.85rem; border-top: 1px solid var(--border-color); padding-top: 18px;">
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--text-muted);" data-i18n="about_lbl_degree">Jenjang Pendidikan:</span>
+                <strong style="color: var(--text-main);" data-i18n="about_val_degree">Strata 1 (S1)</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; gap: 10px;">
+                <span style="color: var(--text-muted);" data-i18n="about_lbl_major">Program Studi:</span>
+                <strong style="color: var(--text-main);" data-i18n="about_val_major">Sistem Informasi</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; gap: 10px;">
+                <span style="color: var(--text-muted);" data-i18n="about_lbl_faculty">Fakultas:</span>
+                <strong style="color: var(--text-main); text-align: right;" data-i18n="about_val_faculty">Ilmu Komputer dan Teknologi Informasi</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--text-muted);" data-i18n="about_lbl_grad_year">Tahun Kelulusan:</span>
+                <strong style="color: var(--text-main);">2026</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--text-muted);" data-i18n="about_lbl_title">Gelar Akademik:</span>
+                <strong style="color: var(--text-main);" data-i18n="about_val_title">Sarjana Komputer (S.Kom)</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--text-muted);" data-i18n="about_lbl_loc">Lokasi Domisili:</span>
+                <strong style="color: var(--text-main);" data-i18n="about_val_loc">Jakarta Selatan, Indonesia</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Core Pillars -->
+      <div class="bento-card" style="grid-column: span 12;">
+        <span class="cert-badge-tag" style="margin-bottom: 12px; display: inline-block;" data-i18n="about_pillars_tag">PILAR KOMPETENSI STRATEGIS</span>
+        <h3 style="font-size: 1.8rem; margin-bottom: 8px;" data-i18n="about_pillars_title">Fondasi Keahlian & Spesialisasi Profesional</h3>
+        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 24px;" data-i18n="about_pillars_sub">
+          Tiga pilar keahlian utama yang menjadi fondasi dalam memberikan nilai tambah dan kontribusi teknologi nyata bagi institusi.
+        </p>
+
+        <div class="specialization-grid" style="margin-top: 0;">
+          <div class="specialization-card">
+            <div class="specialization-num" data-i18n="p1_num">PILAR 01</div>
+            <h4 style="font-size: 1.15rem; margin-bottom: 8px; color: var(--text-main);" data-i18n="p1_title">Arsitektur & Rekayasa Perangkat Lunak Web</h4>
+            <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.7;" data-i18n="p1_desc">
+              Mampu merancang dan mengembangkan sistem aplikasi web berbasis arsitektur Model-View-Controller (MVC) menggunakan PHP, Laravel, CodeIgniter 4, Python (Django), Go-Lang, dan MySQL. Berorientasi pada kepatuhan keamanan data, modularitas komponen, dan keandalan performa sistem.
+            </p>
+          </div>
+
+          <div class="specialization-card">
+            <div class="specialization-num" data-i18n="p2_num">PILAR 02</div>
+            <h4 style="font-size: 1.15rem; margin-bottom: 8px; color: var(--text-main);" data-i18n="p2_title">Analisis Data & Business Intelligence</h4>
+            <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.7;" data-i18n="p2_desc">
+              Mampu memproses dataset terstruktur dengan bahasa pemrograman Python (NumPy dan Pandas) guna membersihkan data, mengidentifikasi pola tren, dan merumuskan metrik Business Intelligence untuk mendukung proses pengambilan keputusan manajerial.
+            </p>
+          </div>
+
+          <div class="specialization-card">
+            <div class="specialization-num" data-i18n="p3_num">PILAR 03</div>
+            <h4 style="font-size: 1.15rem; margin-bottom: 8px; color: var(--text-main);" data-i18n="p3_title">Eksplorasi Sistem Cerdas & Otomasi</h4>
+            <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.7;" data-i18n="p3_desc">
+              Memiliki ketertarikan mendalam dan pemahaman fundamental terhadap implementasi algoritma Machine Learning serta otomatisasi proses digital guna meningkatkan efisiensi operasional organisasi di era transformasi teknologi informasi modern.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Professional Work Ethic & Principles -->
+      <div class="bento-card" style="grid-column: span 6;">
+        <span class="cert-badge-tag" style="margin-bottom: 8px; display: inline-block;" data-i18n="ethic_tag">NILAI KERJA</span>
+        <h3 style="font-size: 1.45rem; margin-bottom: 12px;" data-i18n="ethic_title">Etos Kerja & Integritas Profesional</h3>
+        <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 18px;" data-i18n="ethic_sub">
+          Dalam setiap amanah rekayasa teknologi dan tugas operasional yang dipercayakan, saya senantiasa menjunjung tinggi nilai-nilai fundamental berikut:
+        </p>
+
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div style="display: flex; gap: 12px; align-items: flex-start;">
+            <div style="width: 28px; height: 28px; border-radius: 50%; background: var(--primary-light); color: var(--primary-dark); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 800; font-size: 0.8rem;">✓</div>
+            <div>
+              <strong style="color: var(--text-main); font-size: 0.95rem;" data-i18n="ethic_1_title">Ketelitian Terhadap Detail (Attention to Detail)</strong>
+              <p style="font-size: 0.825rem; color: var(--text-muted);" data-i18n="ethic_1_desc">Memastikan akurasi logika pemrograman, konsistensi skema basis data, dan validasi formulir guna mencegah anomali data.</p>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 12px; align-items: flex-start;">
+            <div style="width: 28px; height: 28px; border-radius: 50%; background: var(--primary-light); color: var(--primary-dark); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 800; font-size: 0.8rem;">✓</div>
+            <div>
+              <strong style="color: var(--text-main); font-size: 0.95rem;" data-i18n="ethic_2_title">Kolaborasi Tim & Komunikasi Efektif</strong>
+              <p style="font-size: 0.825rem; color: var(--text-muted);" data-i18n="ethic_2_desc">Mampu bersinergi secara aktif dalam lingkungan kerja multidisiplin guna mencapai target operasional bersama.</p>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 12px; align-items: flex-start;">
+            <div style="width: 28px; height: 28px; border-radius: 50%; background: var(--primary-light); color: var(--primary-dark); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 800; font-size: 0.8rem;">✓</div>
+            <div>
+              <strong style="color: var(--text-main); font-size: 0.95rem;" data-i18n="ethic_3_title">Disiplin & Tanggung Jawab Operasional</strong>
+              <p style="font-size: 0.825rem; color: var(--text-muted);" data-i18n="ethic_3_desc">Menuntaskan setiap tenggat waktu penugasan secara terstruktur dengan ketahanan kerja yang teruji pada event berskala nasional.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Readiness & Next Steps -->
+      <div class="bento-card" style="grid-column: span 6; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <span class="cert-badge-tag" style="margin-bottom: 8px; display: inline-block;" data-i18n="readiness_tag">KESIAPAN PROFESIONAL</span>
+          <h3 style="font-size: 1.45rem; margin-bottom: 12px;" data-i18n="readiness_title">Kesiapan Karier & Kontribusi Institusional</h3>
+          <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 20px;" data-i18n="readiness_desc">
+            Dengan bekal kurikulum Sistem Informasi yang komprehensif, sertifikasi kompetensi resmi, serta pengalaman manajemen operasional, saya siap mengemban tanggung jawab profesional pada posisi:
+          </p>
+
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px;">
+            <span class="tech-pill">Web Developer / Software Engineer</span>
+            <span class="tech-pill">Backend Developer (PHP / Go)</span>
+            <span class="tech-pill">Data Analyst Trainee</span>
+            <span class="tech-pill">IT Business Analyst</span>
+            <span class="tech-pill">IT Operations Specialist</span>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <a href="skills.html" class="btn-tactile btn-primary-tactile" style="flex: 1;">
+            <i data-lucide="layers"></i> <span data-i18n="btn_view_skills">Lihat Matriks Keahlian</span>
+          </a>
+          <a href="contact.html" class="btn-tactile btn-secondary-tactile" style="flex: 1;">
+            <i data-lucide="send"></i> <span data-i18n="btn_contact_official">Hubungi Kontak Resmi</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Expanded Modern Executive Footer -->
+    <div class="footer-wrapper">
+      <footer class="footer-expanded-card">
+        <div class="footer-top-grid">
+          
+          <!-- Left Column: Big Brand Name, Quote & 7 Social Media Icon Buttons -->
+          <div class="footer-brand-col">
+            <h3 class="footer-hero-name">Danendra Daniswara<span>.</span></h3>
+            <p class="footer-hero-quote">
+              the only way to do great work is to love what you do. — Steve Jobs
+            </p>
+            
+            <!-- 7 Social Media Buttons in Exact Order -->
+            <!-- 7 Social Media Buttons in Exact Order -->
+            <div class="footer-social-row">
+              <!-- 1. GitHub -->
+              <a href="https://github.com/danendradanis" target="_blank" rel="noopener" class="footer-social-btn" title="GitHub (danendradanis)" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+              </a>
+
+              <!-- 2. LinkedIn -->
+              <a href="https://www.linkedin.com/in/muhammad-danendra-daniswara-effendi-56b58534b/" target="_blank" rel="noopener" class="footer-social-btn" title="LinkedIn (Muhammad Danendra Daniswara Effendi)" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                </svg>
+              </a>
+
+              <!-- 3. Instagram -->
+              <a href="https://www.instagram.com/danendrdns" target="_blank" rel="noopener" class="footer-social-btn" title="Instagram (@danendrdns)" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+                </svg>
+              </a>
+
+              <!-- 4. Threads -->
+              <a href="https://www.threads.net/@danendrdns" target="_blank" rel="noopener" class="footer-social-btn" title="Threads (@danendrdns)" aria-label="Threads">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M12.75 1.5c-5.7 0-10.5 4.8-10.5 10.5s4.8 10.5 10.5 10.5c3.2 0 6.1-1.4 8.1-3.7l-2.4-1.9c-1.5 1.7-3.6 2.7-5.7 2.7-4.2 0-7.5-3.3-7.5-7.5s3.3-7.5 7.5-7.5c4.1 0 7 2.8 7 7.4 0 2.3-1.1 3.7-2.6 3.7-1 0-1.7-.7-1.4-2l.9-4.2h-2.9l-.3 1.4c-.4-.9-1.3-1.4-2.4-1.4-2.5 0-4.4 2.3-4.4 4.8 0 2.2 1.6 3.9 3.7 3.9 1.3 0 2.4-.7 3-1.7.3 1.3 1.5 2.1 3 2.1 3.2 0 5.6-2.6 5.6-6.4 0-6.1-4.7-10.7-11.2-10.7zM11.9 15c-1 0-1.8-.8-1.8-1.9 0-1.2.9-2.1 2-2.1.9 0 1.7.7 1.7 1.8 0 1.3-.9 2.2-1.9 2.2z"/>
+                </svg>
+              </a>
+
+              <!-- 5. Telegram -->
+              <a href="https://t.me/+6285219465754" target="_blank" rel="noopener" class="footer-social-btn" title="Telegram (+6285219465754)" aria-label="Telegram">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18.25.25 0 0 0-.21-.02c-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.77-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+                </svg>
+              </a>
+
+              <!-- 6. X (Twitter) -->
+              <a href="https://x.com/deweeeeeeeeeeee" target="_blank" rel="noopener" class="footer-social-btn" title="X (@deweeeeeeeeeeee)" aria-label="X">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+              </a>
+
+              <!-- 7. Mail -->
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=muhdanendra12@gmail.com," target="_blank" rel="noopener" class="footer-social-btn" title="Kirim Email via Gmail (muhdanendra12@gmail.com)" aria-label="Email">
+                <i data-lucide="mail"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: 3 Nav Link Columns -->
+          <div class="footer-nav-grid">
+            <!-- Col 1: Pages -->
+            <div>
+              <h4 class="footer-col-title">Pages</h4>
+              <ul class="footer-col-links">
+                <li><a href="index.html" class="footer-col-link">Home</a></li>
+                <li><a href="about.html" class="footer-col-link">About</a></li>
+                <li><a href="skills.html" class="footer-col-link">Skills</a></li>
+                <li><a href="contact.html" class="footer-col-link">Contact</a></li>
+              </ul>
+            </div>
+
+            <!-- Col 2: Explore -->
+            <div>
+              <h4 class="footer-col-title">Explore</h4>
+              <ul class="footer-col-links">
+                <li><a href="projects.html" class="footer-col-link">Portfolio</a></li>
+                <li><a href="experience.html" class="footer-col-link">Experience</a></li>
+                <li><a href="certifications.html" class="footer-col-link">Certificates</a></li>
+                <li><button class="footer-col-link" onclick="openResumeModal()">Curriculum Vitae</button></li>
+              </ul>
+            </div>
+
+            <!-- Col 3: Connect -->
+            <div>
+              <h4 class="footer-col-title">Connect</h4>
+              <ul class="footer-col-links">
+                <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=muhdanendra12@gmail.com," target="_blank" rel="noopener" class="footer-col-link">Direct Email</a></li>
+                <li><a href="https://www.linkedin.com/in/muhammad-danendra-daniswara-effendi-56b58534b/" target="_blank" rel="noopener" class="footer-col-link">LinkedIn Profile</a></li>
+                <li><a href="https://github.com/danendradanis" target="_blank" rel="noopener" class="footer-col-link">GitHub Code</a></li>
+                <li><a href="contact.html" class="footer-col-link">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Footer Bottom Bar -->
+        <div class="footer-bottom-bar">
+          <div class="footer-bottom-copy">
+            © 2026 Muhammad Danendra Daniswara Effendi • S1 Sistem Informasi Universitas Gunadarma
+          </div>
+          <button class="footer-back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+            <i data-lucide="arrow-up" style="width: 14px; height: 14px;"></i> Back to Top
+          </button>
+        </div>
+      </footer>
+    </div>
+
+  </main>
+
+  <!-- Modal Dialog -->
+  <div class="modal-backdrop" id="universalModalBackdrop" role="dialog" aria-modal="true">
+    <div class="modal-content-card">
+      <button class="control-btn" style="position: absolute; top: 18px; right: 18px;" onclick="closeUniversalModal()" aria-label="Tutup Dialog">
+        <i data-lucide="x"></i>
+      </button>
+      <div id="modalDynamicBody"></div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast-popup" id="toastPopup">
+    <i data-lucide="check-circle-2" style="color: var(--primary); width: 18px; height: 18px;"></i>
+    <span id="toastText">Notifikasi</span>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

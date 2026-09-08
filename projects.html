@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Showcase proyek dan portofolio rekayasa web Muhammad Danendra Daniswara Effendi — Sistem Informasi Izqy’s Kitchen (https://izqyskitchen.shop/) dengan arsitektur CodeIgniter 4 dan basis data MySQL.">
+  <meta name="keywords" content="Muhammad Danendra Daniswara Effendi, Proyek, Portfolio, Izqy's Kitchen, izqyskitchen.shop, Web Developer, CodeIgniter 4, PHP, MySQL">
+  <meta name="author" content="Muhammad Danendra Daniswara Effendi">
+  
+  <title>Projects & Engineering Lab — Muhammad Danendra Daniswara Effendi</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Centralized Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Sticky Floating Navbar -->
+  <div class="nav-wrapper">
+    <header class="navbar-card">
+      <a href="index.html" class="logo-link" aria-label="Muhammad Danendra Daniswara Effendi Homepage">
+        <div class="logo-container">
+          <div class="logo-text-default">danendra<span class="logo-dot">.</span></div>
+          <div class="logo-text-hover">daniswara<span class="logo-dot">.</span></div>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="nav-item" data-i18n="nav_home">Home</a>
+        <a href="about.html" class="nav-item" data-i18n="nav_about">About</a>
+        <a href="skills.html" class="nav-item" data-i18n="nav_skills">Skills</a>
+        <a href="projects.html" class="nav-item active" data-i18n="nav_projects">Projects</a>
+        <a href="experience.html" class="nav-item" data-i18n="nav_experience">Experience</a>
+        <a href="certifications.html" class="nav-item" data-i18n="nav_certs">Certificates</a>
+        <a href="contact.html" class="nav-item" data-i18n="nav_contact">Contact</a>
+      </nav>
+
+      <div class="nav-controls">
+        <!-- Language Switcher Dropdown -->
+        <div class="lang-dropdown-wrapper">
+          <button class="control-btn" id="langToggleBtn" title="Konfirmasi & Pilih Bahasa" aria-label="Select Language">
+            <span id="langDisplayBadge" style="display: flex; align-items: center; justify-content: center;">
+              <svg width="20" height="20" viewBox="0 0 24 24" style="border-radius: 50%; overflow: hidden; display: block; box-shadow: 0 1px 3px rgba(0,0,0,0.25); border: 1px solid rgba(128,128,128,0.3);"><rect width="24" height="12" fill="#E70011"/><rect y="12" width="24" height="12" fill="#FFFFFF"/></svg>
+            </span>
+          </button>
+          <div class="lang-dropdown-menu" id="langDropdownMenu">
+            <button type="button" class="lang-option-btn active" data-lang="id" onclick="selectLanguage('id')">
+              <span class="flag-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" style="border-radius: 50%; overflow: hidden; display: block; box-shadow: 0 1px 3px rgba(0,0,0,0.25); border: 1px solid rgba(128,128,128,0.3);"><rect width="24" height="12" fill="#E70011"/><rect y="12" width="24" height="12" fill="#FFFFFF"/></svg>
+              </span>
+              <span class="lang-name">Indonesia</span>
+              <i data-lucide="check" class="lang-check-icon"></i>
+            </button>
+            <button type="button" class="lang-option-btn" data-lang="en" onclick="selectLanguage('en')">
+              <span class="flag-circle">
+                <svg width="20" height="20" viewBox="0 0 60 60" style="border-radius: 50%; overflow: hidden; display: block; box-shadow: 0 1px 3px rgba(0,0,0,0.25); border: 1px solid rgba(128,128,128,0.3);"><clipPath id="ukClipOpt4"><circle cx="30" cy="30" r="30"/></clipPath><g clip-path="url(#ukClipOpt4)"><rect width="60" height="60" fill="#012169"/><path d="M0 0 L60 60 M60 0 L0 60" stroke="#FFFFFF" stroke-width="9"/><path d="M0 0 L60 60 M60 0 L0 60" stroke="#C8102E" stroke-width="5"/><path d="M30 0 V60 M0 30 H60" stroke="#FFFFFF" stroke-width="14"/><path d="M30 0 V60 M0 30 H60" stroke="#C8102E" stroke-width="8"/></g></svg>
+              </span>
+              <span class="lang-name">English</span>
+              <i data-lucide="check" class="lang-check-icon"></i>
+            </button>
+          </div>
+        </div>
+
+        <button class="control-btn" id="themeToggleBtn" title="Alihkan Tema Gelap/Terang" aria-label="Toggle Theme">
+          <i data-lucide="moon" id="themeIcon"></i>
+        </button>
+
+        <button class="control-btn mobile-menu-btn" id="mobileMenuToggle" aria-label="Buka Navigasi Seluler">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </header>
+  </div>
+
+  <main class="container section">    <!-- Page Header Banner -->
+    <div class="page-header-banner">
+      <div class="page-header-content">
+        <div class="page-breadcrumb">
+          <span>Home</span>
+          <i data-lucide="chevron-right" style="width: 14px; height: 14px;"></i>
+          <span data-i18n="projects_page_breadcrumb">Portofolio Proyek Rekayasa</span>
+        </div>
+        <h1 class="page-title" data-i18n="projects_page_title">Portofolio Rekayasa & Studi Kasus Sistem</h1>
+        <p class="page-subtitle" data-i18n="projects_page_sub">
+          Dokumentasi formal perancangan perangkat lunak, arsitektur basis data, serta implementasi sistem informasi terapan yang berorientasi pada efisiensi operasional dan keandalan fungsional.
+        </p>
+      </div>
+      <div>
+        <button class="btn-tactile btn-primary-tactile" onclick="openProjectDetailsModal()">
+          <i data-lucide="file-text"></i> <span data-i18n="btn_view_proj">Dokumentasi Teknis Lengkap</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Featured Case Study: Izqy's Kitchen -->
+    <div class="project-showcase-bento" style="margin-bottom: 24px;">
+      <!-- Left Details Pane -->
+      <div class="project-info-pane">
+        <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 16px; flex-wrap: wrap;">
+          <span class="project-badge-pill" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; height: 30px; padding: 0 14px; box-sizing: border-box; font-size: 0.75rem; font-weight: 700; line-height: 1; border-radius: 9999px; margin-bottom: 0; white-space: nowrap;" data-i18n="featured_case_study">STUDI KASUS UNGGULAN</span>
+          <span class="live-status-pill" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; height: 30px; padding: 0 14px; box-sizing: border-box; font-size: 0.75rem; font-weight: 700; line-height: 1; border-radius: 9999px; background: rgba(34, 197, 94, 0.12); color: #15803d; border: 1px solid rgba(34, 197, 94, 0.25); margin-bottom: 0; white-space: nowrap;">
+            <span style="width: 7px; height: 7px; border-radius: 50%; background: #22c55e; display: inline-block; flex-shrink: 0;"></span>
+            <span data-i18n="live_status_badge">Sistem Produksi Aktif (Live)</span>
+          </span>
+        </div>
+        <h2 class="project-headline" data-i18n="proj_title_izqy">Pengembangan Sistem Informasi Web – Izqy’s Kitchen</h2>
+
+        <p class="project-narrative" data-i18n="proj_narrative">
+          Perancangan dan implementasi sistem informasi berbasis web untuk Izqy’s Kitchen sebagai platform digital terintegrasi. Sistem ini mengakomodasi penyajikan katalog komprehensif, profil entitas bisnis, manajemen basis data produk, serta penyederhanaan mekanisme pemesanan pelanggan dengan antarmuka yang responsif lintas perangkat.
+        </p>
+
+        <!-- Tech Stack -->
+        <div class="tech-stack-row" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 30px;">
+          <span class="tech-pill" style="display: flex; align-items: center; justify-content: center; text-align: center;">PHP</span>
+          <span class="tech-pill" style="display: flex; align-items: center; justify-content: center; text-align: center;">CodeIgniter 4</span>
+          <span class="tech-pill" style="display: flex; align-items: center; justify-content: center; text-align: center;">MySQL</span>
+          <span class="tech-pill" style="display: flex; align-items: center; justify-content: center; text-align: center;">HTML5</span>
+          <span class="tech-pill" style="display: flex; align-items: center; justify-content: center; text-align: center;">CSS3 / Bootstrap</span>
+          <span class="tech-pill" style="display: flex; align-items: center; justify-content: center; text-align: center;">JavaScript</span>
+        </div>
+
+        <!-- Action Buttons -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px;">
+          <a href="https://izqyskitchen.shop/" target="_blank" rel="noopener noreferrer" class="btn-tactile btn-primary-tactile" style="text-decoration: none; justify-content: center;">
+            <i data-lucide="external-link"></i> <span data-i18n="btn_visit_live">Kunjungi Sistem Live (izqyskitchen.shop)</span>
+          </a>
+          <button class="btn-tactile btn-secondary-tactile" onclick="openProjectDetailsModal()" style="justify-content: center;">
+            <i data-lucide="file-text"></i> <span data-i18n="btn_view_proj">Dokumentasi Teknis Lengkap</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Right Dual-Device Preview Pane -->
+      <div class="project-screen-pane">
+        <!-- Device Switcher Controls -->
+        <div class="device-switcher-row">
+          <button class="device-btn active" id="viewDesktopBtn" onclick="switchProjectPreview('desktop')">
+            <i data-lucide="monitor" style="width: 14px; height: 14px;"></i> <span data-i18n="btn_desktop_view">Tampilan Desktop</span>
+          </button>
+          <button class="device-btn" id="viewMobileBtn" onclick="switchProjectPreview('mobile')">
+            <i data-lucide="smartphone" style="width: 14px; height: 14px;"></i> <span data-i18n="btn_mobile_view">Tampilan Seluler</span>
+          </button>
+        </div>
+
+        <!-- Desktop Browser View -->
+        <div class="browser-frame" id="projectDesktopFrame">
+          <div class="browser-top-bar">
+            <div class="browser-traffic-lights">
+              <div class="traffic-dot dot-1"></div>
+              <div class="traffic-dot dot-2"></div>
+              <div class="traffic-dot dot-3"></div>
+            </div>
+            <a href="https://izqyskitchen.shop/" target="_blank" rel="noopener noreferrer" class="browser-url-input" style="text-decoration: none; color: inherit;" title="Kunjungi izqyskitchen.shop di tab baru">
+              <i data-lucide="lock" style="width: 10px; height: 10px; color: var(--primary); margin-right: 6px;"></i>
+              https://izqyskitchen.shop/
+              <i data-lucide="external-link" style="width: 10px; height: 10px; margin-left: auto; opacity: 0.7;"></i>
+            </a>
+          </div>
+          <div class="browser-image-container">
+            <a href="https://izqyskitchen.shop/" target="_blank" rel="noopener noreferrer" class="browser-image-link" title="Buka website live https://izqyskitchen.shop/ (klik untuk mengunjungi)">
+              <!-- Light Mode Image -->
+              <img src="assets/projects/izqy-landing-light.png" alt="Tampilan Landing Page Izqy's Kitchen — Light Mode (izqyskitchen.shop)" class="browser-screen-img izqy-img-light">
+              <!-- Dark Mode Image -->
+              <img src="assets/projects/izqy-landing-dark.png" alt="Tampilan Landing Page Izqy's Kitchen — Dark Mode (izqyskitchen.shop)" class="browser-screen-img izqy-img-dark">
+              
+              <div class="browser-screen-overlay">
+                <span class="btn-tactile btn-primary-tactile" style="box-shadow: 0 8px 24px rgba(0,0,0,0.35);">
+                  <i data-lucide="external-link"></i> <span data-i18n="btn_visit_live">Kunjungi Sistem Live (izqyskitchen.shop)</span>
+                </span>
+              </div>
+            </a>
+          </div>
+          <!-- Sub-bar with key specs -->
+          <div class="browser-bottom-bar">
+            <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+              <span class="cert-badge-tag" style="font-size: 0.725rem; padding: 4px 10px;">CodeIgniter 4 + MySQL</span>
+              <span style="font-size: 0.775rem; font-weight: 600; color: var(--text-muted);" data-i18n="proj_subbar_tag">Sistem Katalog Kuliner & Transaksi Pemesanan</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile App View -->
+        <div class="mobile-frame" id="projectMobileFrame">
+          <div class="mobile-speaker-notch"></div>
+          <a href="https://izqyskitchen.shop/" target="_blank" rel="noopener noreferrer" class="mobile-image-link" title="Buka izqyskitchen.shop versi seluler">
+            <!-- Light Mode Image for Mobile -->
+            <img src="assets/projects/izqy-mobile-light.png" alt="Tampilan Seluler Izqy's Kitchen — Light Mode (izqyskitchen.shop)" class="mobile-screen-img izqy-img-light">
+            <!-- Dark Mode Image for Mobile -->
+            <img src="assets/projects/izqy-mobile-dark.png" alt="Tampilan Seluler Izqy's Kitchen — Dark Mode (izqyskitchen.shop)" class="mobile-screen-img izqy-img-dark">
+
+            <div class="mobile-screen-overlay">
+              <span class="btn-tactile btn-primary-tactile" style="font-size: 0.75rem; padding: 6px 12px; white-space: nowrap;">
+                <i data-lucide="external-link"></i> <span data-i18n="btn_open_live_sm">Buka Live</span>
+              </span>
+            </div>
+          </a>
+          <div style="margin-top: 12px; display: flex; flex-direction: column; align-items: center; gap: 2px;">
+            <div style="font-weight: 800; font-size: 0.85rem; color: var(--text-main);" data-i18n="mobile_app_label">IZQY’S KITCHEN SELULER</div>
+            <div style="font-family: var(--font-mono); font-size: 0.725rem; color: var(--primary);">izqyskitchen.shop</div>
+          </div>
+          <div class="mobile-home-indicator"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Case Study Highlights Breakdown -->
+    <div class="bento-grid">
+      <div class="bento-card" style="grid-column: span 4;">
+        <span class="cert-badge-tag" style="margin-bottom: 8px; display: inline-block;" data-i18n="cs_challenge_tag">01 / IDENTIFIKASI TANTANGAN</span>
+        <h3 style="font-size: 1.25rem; margin-bottom: 8px;" data-i18n="cs_challenge_title">Kebutuhan Digitalisasi Operasional</h3>
+        <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6;" data-i18n="cs_challenge_desc">
+          Entitas bisnis kuliner Izqy’s Kitchen memerlukan platform digital terpadu untuk menyajikan katalog produk terbarukan secara transparan, menstandarisasi pencatatan pesanan, serta memitigasi risiko kesalahan komunikasi pada pemesanan manual.
+        </p>
+      </div>
+
+      <div class="bento-card" style="grid-column: span 4;">
+        <span class="cert-badge-tag" style="margin-bottom: 8px; display: inline-block;" data-i18n="cs_solution_tag">02 / ARSITEKTUR SOLUSI</span>
+        <h3 style="font-size: 1.25rem; margin-bottom: 8px;" data-i18n="cs_solution_title">Penerapan Arsitektur MVC & Basis Data Relasional</h3>
+        <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6;" data-i18n="cs_solution_desc">
+          Penerapan kerangka kerja CodeIgniter 4 dengan isolasi fungsional yang tegas antara Model kueri database MySQL, Controller logika pemrosesan, dan View presentasi. Dilengkapi validasi ketat pada sisi server demi menjamin keutuhan integritas data transaksi.
+        </p>
+      </div>
+
+      <div class="bento-card" style="grid-column: span 4;">
+        <span class="cert-badge-tag" style="margin-bottom: 8px; display: inline-block;" data-i18n="cs_result_tag">03 / HASIL & DAMPAK STRATEGIS</span>
+        <h3 style="font-size: 1.25rem; margin-bottom: 8px;" data-i18n="cs_result_title">Efisiensi Transaksi & Aksesibilitas Optimal</h3>
+        <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6;" data-i18n="cs_result_desc">
+          Menghasilkan platform web dengan kecepatan muat tinggi yang adaptif pada peramban desktop maupun ponsel cerdas. Berhasil mengefisiensikan siklus konfirmasi pemesanan pelanggan serta memperkuat kredibilitas identitas digital entitas bisnis.
+        </p>
+      </div>
+    </div>
+
+
+    <!-- Expanded Modern Executive Footer -->
+    <div class="footer-wrapper">
+      <footer class="footer-expanded-card">
+        <div class="footer-top-grid">
+          
+          <!-- Left Column: Big Brand Name, Quote & 7 Social Media Icon Buttons -->
+          <div class="footer-brand-col">
+            <h3 class="footer-hero-name">Danendra Daniswara<span>.</span></h3>
+            <p class="footer-hero-quote">
+              the only way to do great work is to love what you do. — Steve Jobs
+            </p>
+            
+            <!-- 7 Social Media Buttons in Exact Order -->
+            <!-- 7 Social Media Buttons in Exact Order -->
+            <div class="footer-social-row">
+              <!-- 1. GitHub -->
+              <a href="https://github.com/danendradanis" target="_blank" rel="noopener" class="footer-social-btn" title="GitHub (danendradanis)" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+              </a>
+
+              <!-- 2. LinkedIn -->
+              <a href="https://www.linkedin.com/in/muhammad-danendra-daniswara-effendi-56b58534b/" target="_blank" rel="noopener" class="footer-social-btn" title="LinkedIn (Muhammad Danendra Daniswara Effendi)" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                </svg>
+              </a>
+
+              <!-- 3. Instagram -->
+              <a href="https://www.instagram.com/danendrdns" target="_blank" rel="noopener" class="footer-social-btn" title="Instagram (@danendrdns)" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+                </svg>
+              </a>
+
+              <!-- 4. Threads -->
+              <a href="https://www.threads.net/@danendrdns" target="_blank" rel="noopener" class="footer-social-btn" title="Threads (@danendrdns)" aria-label="Threads">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M12.75 1.5c-5.7 0-10.5 4.8-10.5 10.5s4.8 10.5 10.5 10.5c3.2 0 6.1-1.4 8.1-3.7l-2.4-1.9c-1.5 1.7-3.6 2.7-5.7 2.7-4.2 0-7.5-3.3-7.5-7.5s3.3-7.5 7.5-7.5c4.1 0 7 2.8 7 7.4 0 2.3-1.1 3.7-2.6 3.7-1 0-1.7-.7-1.4-2l.9-4.2h-2.9l-.3 1.4c-.4-.9-1.3-1.4-2.4-1.4-2.5 0-4.4 2.3-4.4 4.8 0 2.2 1.6 3.9 3.7 3.9 1.3 0 2.4-.7 3-1.7.3 1.3 1.5 2.1 3 2.1 3.2 0 5.6-2.6 5.6-6.4 0-6.1-4.7-10.7-11.2-10.7zM11.9 15c-1 0-1.8-.8-1.8-1.9 0-1.2.9-2.1 2-2.1.9 0 1.7.7 1.7 1.8 0 1.3-.9 2.2-1.9 2.2z"/>
+                </svg>
+              </a>
+
+              <!-- 5. Telegram -->
+              <a href="https://t.me/+6285219465754" target="_blank" rel="noopener" class="footer-social-btn" title="Telegram (+6285219465754)" aria-label="Telegram">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18.25.25 0 0 0-.21-.02c-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.77-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+                </svg>
+              </a>
+
+              <!-- 6. X (Twitter) -->
+              <a href="https://x.com/deweeeeeeeeeeee" target="_blank" rel="noopener" class="footer-social-btn" title="X (@deweeeeeeeeeeee)" aria-label="X">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+              </a>
+
+              <!-- 7. Mail -->
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=muhdanendra12@gmail.com," target="_blank" rel="noopener" class="footer-social-btn" title="Kirim Email via Gmail (muhdanendra12@gmail.com)" aria-label="Email">
+                <i data-lucide="mail"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: 3 Nav Link Columns -->
+          <div class="footer-nav-grid">
+            <!-- Col 1: Pages -->
+            <div>
+              <h4 class="footer-col-title">Pages</h4>
+              <ul class="footer-col-links">
+                <li><a href="index.html" class="footer-col-link">Home</a></li>
+                <li><a href="about.html" class="footer-col-link">About</a></li>
+                <li><a href="skills.html" class="footer-col-link">Skills</a></li>
+                <li><a href="contact.html" class="footer-col-link">Contact</a></li>
+              </ul>
+            </div>
+
+            <!-- Col 2: Explore -->
+            <div>
+              <h4 class="footer-col-title">Explore</h4>
+              <ul class="footer-col-links">
+                <li><a href="projects.html" class="footer-col-link">Portfolio</a></li>
+                <li><a href="experience.html" class="footer-col-link">Experience</a></li>
+                <li><a href="certifications.html" class="footer-col-link">Certificates</a></li>
+                <li><button class="footer-col-link" onclick="openResumeModal()">Curriculum Vitae</button></li>
+              </ul>
+            </div>
+
+            <!-- Col 3: Connect -->
+            <div>
+              <h4 class="footer-col-title">Connect</h4>
+              <ul class="footer-col-links">
+                <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=muhdanendra12@gmail.com," target="_blank" rel="noopener" class="footer-col-link">Direct Email</a></li>
+                <li><a href="https://www.linkedin.com/in/muhammad-danendra-daniswara-effendi-56b58534b/" target="_blank" rel="noopener" class="footer-col-link">LinkedIn Profile</a></li>
+                <li><a href="https://github.com/danendradanis" target="_blank" rel="noopener" class="footer-col-link">GitHub Code</a></li>
+                <li><a href="contact.html" class="footer-col-link">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Footer Bottom Bar -->
+        <div class="footer-bottom-bar">
+          <div class="footer-bottom-copy">
+            © 2026 Muhammad Danendra Daniswara Effendi • S1 Sistem Informasi Universitas Gunadarma
+          </div>
+          <button class="footer-back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+            <i data-lucide="arrow-up" style="width: 14px; height: 14px;"></i> Back to Top
+          </button>
+        </div>
+      </footer>
+    </div>
+
+  </main>
+
+  <!-- Modal Dialog -->
+  <div class="modal-backdrop" id="universalModalBackdrop" role="dialog" aria-modal="true">
+    <div class="modal-content-card">
+      <button class="control-btn" style="position: absolute; top: 18px; right: 18px;" onclick="closeUniversalModal()" aria-label="Close modal">
+        <i data-lucide="x"></i>
+      </button>
+      <div id="modalDynamicBody"></div>
+    </div>
+  </div>
+
+  <div class="toast-popup" id="toastPopup">
+    <i data-lucide="check-circle-2" style="color: var(--primary); width: 18px; height: 18px;"></i>
+    <span id="toastText">Notification</span>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

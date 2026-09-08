@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kredensial dan sertifikasi resmi Muhammad Danendra Daniswara Effendi — 12 Sertifikat terverifikasi Universitas Gunadarma dalam bidang ERP, Web Development, Go-Lang, Business Intelligence, AI, dan Pengabdian Masyarakat.">
+  <meta name="keywords" content="Muhammad Danendra Daniswara Effendi, Sertifikasi, Kredensial, Gunadarma, ERP, Dynamics NAV, Go-Lang, Business Intelligence, Data Analyst, AI">
+  <meta name="author" content="Muhammad Danendra Daniswara Effendi">
+  
+  <title>Certifications & Credentials Vault — Muhammad Danendra Daniswara Effendi</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Centralized Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Sticky Floating Navbar -->
+  <div class="nav-wrapper">
+    <header class="navbar-card">
+      <a href="index.html" class="logo-link" aria-label="Muhammad Danendra Daniswara Effendi Homepage">
+        <div class="logo-container">
+          <div class="logo-text-default">danendra<span class="logo-dot">.</span></div>
+          <div class="logo-text-hover">daniswara<span class="logo-dot">.</span></div>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="nav-item" data-i18n="nav_home">Home</a>
+        <a href="about.html" class="nav-item" data-i18n="nav_about">About</a>
+        <a href="skills.html" class="nav-item" data-i18n="nav_skills">Skills</a>
+        <a href="projects.html" class="nav-item" data-i18n="nav_projects">Projects</a>
+        <a href="experience.html" class="nav-item" data-i18n="nav_experience">Experience</a>
+        <a href="certifications.html" class="nav-item active" data-i18n="nav_certs">Certificates</a>
+        <a href="contact.html" class="nav-item" data-i18n="nav_contact">Contact</a>
+      </nav>
+
+      <div class="nav-controls">
+        <!-- Language Switcher Dropdown -->
+        <div class="lang-dropdown-wrapper">
+          <button class="control-btn" id="langToggleBtn" title="Konfirmasi & Pilih Bahasa" aria-label="Select Language">
+            <span id="langDisplayBadge" style="display: flex; align-items: center; justify-content: center;">
+              <svg width="20" height="20" viewBox="0 0 24 24" style="border-radius: 50%; overflow: hidden; display: block; box-shadow: 0 1px 3px rgba(0,0,0,0.25); border: 1px solid rgba(128,128,128,0.3);"><rect width="24" height="12" fill="#E70011"/><rect y="12" width="24" height="12" fill="#FFFFFF"/></svg>
+            </span>
+          </button>
+          <div class="lang-dropdown-menu" id="langDropdownMenu">
+            <button type="button" class="lang-option-btn active" data-lang="id" onclick="selectLanguage('id')">
+              <span class="flag-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" style="border-radius: 50%; overflow: hidden; display: block; box-shadow: 0 1px 3px rgba(0,0,0,0.25); border: 1px solid rgba(128,128,128,0.3);"><rect width="24" height="12" fill="#E70011"/><rect y="12" width="24" height="12" fill="#FFFFFF"/></svg>
+              </span>
+              <span class="lang-name">Indonesia</span>
+              <i data-lucide="check" class="lang-check-icon"></i>
+            </button>
+            <button type="button" class="lang-option-btn" data-lang="en" onclick="selectLanguage('en')">
+              <span class="flag-circle">
+                <svg width="20" height="20" viewBox="0 0 60 60" style="border-radius: 50%; overflow: hidden; display: block; box-shadow: 0 1px 3px rgba(0,0,0,0.25); border: 1px solid rgba(128,128,128,0.3);"><clipPath id="ukClipOpt6"><circle cx="30" cy="30" r="30"/></clipPath><g clip-path="url(#ukClipOpt6)"><rect width="60" height="60" fill="#012169"/><path d="M0 0 L60 60 M60 0 L0 60" stroke="#FFFFFF" stroke-width="9"/><path d="M0 0 L60 60 M60 0 L0 60" stroke="#C8102E" stroke-width="5"/><path d="M30 0 V60 M0 30 H60" stroke="#FFFFFF" stroke-width="14"/><path d="M30 0 V60 M0 30 H60" stroke="#C8102E" stroke-width="8"/></g></svg>
+              </span>
+              <span class="lang-name">English</span>
+              <i data-lucide="check" class="lang-check-icon"></i>
+            </button>
+          </div>
+        </div>
+
+        <button class="control-btn" id="themeToggleBtn" title="Alihkan Tema Gelap/Terang" aria-label="Toggle Theme">
+          <i data-lucide="moon" id="themeIcon"></i>
+        </button>
+
+        <button class="control-btn mobile-menu-btn" id="mobileMenuToggle" aria-label="Buka Navigasi Seluler">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </header>
+  </div>
+
+  <main class="container section">
+    
+    <!-- Page Header Banner -->
+    <div class="page-header-banner">
+      <div class="page-header-content">
+        <div class="page-breadcrumb">
+          <span>Home</span>
+          <i data-lucide="chevron-right" style="width: 14px; height: 14px;"></i>
+          <span data-i18n="certs_page_breadcrumb">Lisensi & Sertifikasi Resmi</span>
+        </div>
+        <h1 class="page-title" data-i18n="certs_page_title">Sertifikasi Kompetensi & Kredensial Resmi (12)</h1>
+        <p class="page-subtitle" data-i18n="certs_page_sub">
+          Arsip terverifikasi dari 12 sertifikat kompetensi nasional dan internasional dalam bidang Rekayasa Perangkat Lunak, Data Science, AI, dan Tata Kelola Sistem Informasi.
+        </p>
+      </div>
+      <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+        <a href="certificates/sertifikat-lengkap-muhammad-danendra.pdf" target="_blank" class="btn-tactile btn-primary-tactile">
+          <i data-lucide="file-archive"></i> <span data-i18n="btn_combined_pdf">Buka Seluruh Dokumen (PDF Terpadu)</span>
+        </a>
+        <button class="btn-tactile btn-secondary-tactile" onclick="openResumeModal()">
+          <i data-lucide="file-text"></i> <span data-i18n="btn_download_cv">Berkas CV Resmi</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Filter Tabs Row -->
+    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; flex-wrap: wrap; gap: 14px;">
+      <div>
+        <span class="cert-badge-tag" style="margin-bottom: 6px; display: inline-block;" data-i18n="certs_domain_tag">KLASIFIKASI BIDANG KOMPETENSI</span>
+        <h3 style="font-size: 1.5rem; color: var(--text-main);" data-i18n="certs_domain_heading">Penyaringan Berdasarkan Domain Keahlian</h3>
+      </div>
+      <div class="skills-filter-tabs" style="margin-bottom: 0;">
+        <button class="tab-pill-btn active" data-cert-filter="all" data-i18n="cert_filter_all">Semua Sertifikasi (12)</button>
+        <button class="tab-pill-btn" data-cert-filter="erp" data-i18n="cert_filter_erp">ERP & Navision (3)</button>
+        <button class="tab-pill-btn" data-cert-filter="web" data-i18n="cert_filter_web">Rekayasa Web & Riset SI (4)</button>
+        <button class="tab-pill-btn" data-cert-filter="data" data-i18n="cert_filter_data">Analitik Data & AI (4)</button>
+        <button class="tab-pill-btn" data-cert-filter="volunteer" data-i18n="cert_filter_vol">Pengabdian Sosial (1)</button>
+      </div>
+    </div>
+
+    <!-- Certifications Bento Grid -->
+    <div class="bento-grid" id="certsBentoGrid" style="margin-bottom: 30px;">
+      
+      <!-- Cert 1 -->
+      <div class="bento-card cert-bento-card" data-cat="erp">
+        <div>
+          <div class="cert-thumb-wrap" onclick="openCertDetailsModal(1)" title="Klik untuk pratinjau sertifikat">
+            <img src="assets/certificates/sertifikat-01-fundamental-erp.png" alt="Fundamental ERP" loading="lazy">
+            <span class="cert-pdf-badge"><i data-lucide="file-text" style="width: 12px; height: 12px;"></i> PDF Resmi</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <span class="cert-badge-tag">SISTEM ERP</span>
+            <span style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted);">Feb 2023</span>
+          </div>
+          <h4 style="font-size: 1.15rem; margin-bottom: 6px;">Fundamental ERP</h4>
+          <div style="font-family: var(--font-mono); font-size: 0.775rem; color: var(--text-subtle); margin-bottom: 10px;">ID Lisensi: 719923 • Univ. Gunadarma</div>
+          <p style="font-size: 0.85rem; line-height: 1.6; color: var(--text-muted);">Konsep arsitektur Enterprise Resource Planning, proses bisnis ADempiere, Microsoft Dynamics NAV, & SAP.</p>
+        </div>
+        <div style="display: flex; gap: 8px; margin-top: 14px;">
+          <button class="btn-tactile btn-primary-tactile" style="flex: 1; font-size: 0.8rem; padding: 8px 10px; justify-content: center;" onclick="openCertDetailsModal(1)">
+            <i data-lucide="file-check"></i> Pratinjau & Silabus
+          </button>
+          <a href="certificates/sertifikat-01-fundamental-erp.pdf" target="_blank" class="btn-tactile btn-secondary-tactile" style="padding: 8px 12px; font-size: 0.8rem; justify-content: center;" title="Buka Dokumen PDF di Tab Baru">
+            <i data-lucide="external-link"></i> PDF
+          </a>
+        </div>
+      </div>
+
+      <!-- Cert 2 -->
+      <div class="bento-card cert-bento-card" data-cat="web">
+        <div>
+          <div class="cert-thumb-wrap" onclick="openCertDetailsModal(2)" title="Klik untuk pratinjau sertifikat">
+            <img src="assets/certificates/sertifikat-02-web-programming.png" alt="Fundamental Web Programming" loading="lazy">
+            <span class="cert-pdf-badge"><i data-lucide="file-text" style="width: 12px; height: 12px;"></i> PDF Resmi</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <span class="cert-badge-tag">REKAYASA WEB</span>
+            <span style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted);">Feb 2024</span>
+          </div>
+          <h4 style="font-size: 1.15rem; margin-bottom: 6px;">Fundamental Web Programming</h4>
+          <div style="font-family: var(--font-mono); font-size: 0.775rem; color: var(--text-subtle); margin-bottom: 10px;">ID Lisensi: 100618 • Univ. Gunadarma</div>
+          <p style="font-size: 0.85rem; line-height: 1.6; color: var(--text-muted);">Prinsip fundamental aplikasi web: sintaksis Go, J2EE/JSP, arsitektur .NET/C#, ASP.NET, serta tata kelola CSS.</p>
+        </div>
+        <div style="display: flex; gap: 8px; margin-top: 14px;">
+          <button class="btn-tactile btn-primary-tactile" style="flex: 1; font-size: 0.8rem; padding: 8px 10px; justify-content: center;" onclick="openCertDetailsModal(2)">
+            <i data-lucide="file-check"></i> Pratinjau & Silabus
+          </button>
+          <a href="certificates/sertifikat-02-web-programming.pdf" target="_blank" class="btn-tactile btn-secondary-tactile" style="padding: 8px 12px; font-size: 0.8rem; justify-content: center;" title="Buka Dokumen PDF di Tab Baru">
+            <i data-lucide="external-link"></i> PDF
+          </a>
+        </div>
+      </div>
+
+      <!-- Cert 3 -->
+      <div class="bento-card cert-bento-card" data-cat="web">
+        <div>
+          <div class="cert-thumb-wrap" onclick="openCertDetailsModal(3)" title="Klik untuk pratinjau sertifikat">
+            <img src="assets/certificates/sertifikat-03-golang-beginner.png" alt="Go-Lang for Beginner" loading="lazy">
+            <span class="cert-pdf-badge"><i data-lucide="file-text" style="width: 12px; height: 12px;"></i> PDF Resmi</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <span class="cert-badge-tag">GO-LANG</span>
+            <span style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted);">Feb 2024</span>
+          </div>
+          <h4 style="font-size: 1.15rem; margin-bottom: 6px;">Go-Lang for Beginner</h4>
+          <div style="font-family: var(--font-mono); font-size: 0.775rem; color: var(--text-subtle); margin-bottom: 10px;">ID Lisensi: 728264 • Univ. Gunadarma</div>
+          <p style="font-size: 0.85rem; line-height: 1.6; color: var(--text-muted);">Sintaksis Go, struktur structs, pointers, slices, alur kendali, server web internal, serialisasi JSON, & Polymer.</p>
+        </div>
+        <div style="display: flex; gap: 8px; margin-top: 14px;">
+          <button class="btn-tactile btn-primary-tactile" style="flex: 1; font-size: 0.8rem; padding: 8px 10px; justify-content: center;" onclick="openCertDetailsModal(3)">
+            <i data-lucide="file-check"></i> Pratinjau & Silabus
+          </button>
+          <a href="certificates/sertifikat-03-golang-beginner.pdf" target="_blank" class="btn-tactile btn-secondary-tactile" style="padding: 8px 12px; font-size: 0.8rem; justify-content: center;" title="Buka Dokumen PDF di Tab Baru">
+            <i data-lucide="external-link"></i> PDF
+          </a>
+        </div>
+      </div>
+
+      <!-- Cert 4 -->
+      <div class="bento-card cert-bento-card" data-cat="erp">
+        <div>
+          <div class="cert-thumb-wrap" onclick="openCertDetailsModal(4)" title="Klik untuk pratinjau sertifikat">
+            <img src="assets/certificates/sertifikat-04-dynamics-nav-beginner.png" alt="Microsoft Dynamics NAV Beginner" loading="lazy">
+            <span class="cert-pdf-badge"><i data-lucide="file-text" style="width: 12px; height: 12px;"></i> PDF Resmi</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <span class="cert-badge-tag">MICROSOFT NAV</span>
+            <span style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted);">Agu 2024</span>
+          </div>
+          <h4 style="font-size: 1.15rem; margin-bottom: 6px;">Microsoft Dynamics NAV Beginner</h4>
+          <div style="font-family: var(--font-mono); font-size: 0.775rem; color: var(--text-subtle); margin-bottom: 10px;">ID Lisensi: 772025 • Univ. Gunadarma</div>
+          <p style="font-size: 0.85rem; line-height: 1.6; color: var(--text-muted);">Operasionalisasi ERP NAV, buku besar umum, dimensi akun, manajemen persediaan, siklus pengadaan, dan otorisasi.</p>
+        </div>
+        <div style="display: flex; gap: 8px; margin-top: 14px;">
+          <button class="btn-tactile btn-primary-tactile" style="flex: 1; font-size: 0.8rem; padding: 8px 10px; justify-content: center;" onclick="openCertDetailsModal(4)">
+            <i data-lucide="file-check"></i> Pratinjau & Silabus
+          </button>
+          <a href="certificates/sertifikat-04-dynamics-nav-beginner.pdf" target="_blank" class="btn-tactile btn-secondary-tactile" style="padding: 8px 12px; font-size: 0.8rem; justify-content: center;" title="Buka Dokumen PDF di Tab Baru">
+            <i data-lucide="external-link"></i> PDF
+          </a>
+        </div>
+      </div>
+
+      <!-- Cert 5 -->
+      <div class="bento-card cert-bento-card" data-cat="web">
+        <div>
+          <div class="cert-thumb-wrap" onclick="openCertDetailsModal(5)" title="Klik untuk pratinjau sertifikat">
+            <img src="assets/certificates/sertifikat-05-golang-intermediate.png" alt="Go-Lang for Intermediate" loading="lazy">
+            <span class="cert-pdf-badge"><i data-lucide="file-text" style="width: 12px; height: 12px;"></i> PDF Resmi</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <span class="cert-badge-tag">GO-LANG LANJUTAN</span>
+            <span style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted);">Agu 2025</span>
+          </div>
+          <h4 style="font-size: 1.15rem; margin-bottom: 6px;">Go-Lang for Intermediate</h4>
+          <div style="font-family: var(--font-mono); font-size: 0.775rem; color: var(--text-subtle); margin-bottom: 10px;">ID Lisensi: 082297 • Univ. Gunadarma</div>
+          <p style="font-size: 0.85rem; line-height: 1.6; color: var(--text-muted);">Pengujian unit otomatis, metodologi Test Driven Development (TDD), integrasi kueri SQL, penanganan HTTP, dan deployment.</p>
+        </div>
+        <div style="display: flex; gap: 8px; margin-top: 14px;">
+          <button class="btn-tactile btn-primary-tactile" style="flex: 1; font-size: 0.8rem; padding: 8px 10px; justify-content: center;" onclick="openCertDetailsModal(5)">
+            <i data-lucide="file-check"></i> Pratinjau & Silabus
+          </button>
+          <a href="certificates/sertifikat-05-golang-intermediate.pdf" target="_blank" class="btn-tactile btn-secondary-tactile" style="padding: 8px 12px; font-size: 0.8rem; justify-content: center;" title="Buka Dokumen PDF di Tab Baru">
+            <i data-lucide="external-link"></i> PDF
+          </a>
+        </div>
+      </div>
+
+      <!-- Cert 6 -->
+      <div class="bento-card cert-bento-card" data-cat="erp">
+        <div>
+          <div class="cert-thumb-wrap" onclick="openCertDetailsModal(6)" title="Klik untuk pratinjau sertifikat">
+            <img src="assets/certificates/sertifikat-06-dynamics-nav-cside.png" alt="Dynamics NAV C/SIDE Program" loading="lazy">
+            <span class="cert-pdf-badge"><i data-lucide="file-text" style="width: 12px; height: 12px;"></i> PDF Resmi</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <span class="cert-badge-tag">NAV C/SIDE</span>
+            <span style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted);">Agu 2025</span>
+          </div>
+          <h4 style="font-size: 1.15rem; margin-bottom: 6px;">Dynamics NAV C/SIDE Program</h4>
+          <div style="font-family: var(--font-mono); font-size: 0.775rem; color: var(--text-subtle); margin-bottom: 10px;">ID Lisensi: 457528 • Univ. Gunadarma</div>
+          <p style="font-size: 0.85rem; line-height: 1.6; color: var(--text-muted);">Pemrograman lingkungan C/SIDE dan bahasa C/AL, penanganan pemicu tabel, perancangan formulir, ekspresi variabel, & fungsi intrinsik.</p>
+        </div>
+        <div style="display: flex; gap: 8px; margin-top: 14px;">
+          <button class="btn-tactile btn-primary-tactile" style="flex: 1; font-size: 0.8rem; padding: 8px 10px; justify-content: center;" onclick="openCertDetailsModal(6)">
+            <i data-lucide="file-check"></i> Pratinjau & Silabus
+          </button>
+          <a href="certificates/sertifikat-06-dynamics-nav-cside.pdf" target="_blank" class="btn-tactile btn-secondary-tactile" style="padding: 8px 12px; font-size: 0.8rem; justify-content: center;" title="Buka Dokumen PDF di Tab Baru">
+            <i data-lucide="external-link"></i> PDF
+          </a>
+        </div>
+      </div>
+
+      <!-- Cert 7 -->
+      <div class="bento-card cert-bento-card" data-cat="data">
+        <div>
+          <div class="cert-thumb-wrap" onclick="openCertDetailsModal(7)" title="Klik untuk pratinjau sertifikat">
+            <img src="assets/certificates/sertifikat-07-data-preparation.png" alt="Data Prep for Business Process" loading="lazy">
+            <span class="cert-pdf-badge"><i data-lucide="file-text" style="width: 12px; height: 12px;"></i> PDF Resmi</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <span class="cert-badge-tag">REKAYASA DATA</span>
+            <span style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted);">Sep 2025</span>
+          </div>
+          <h4 style="font-size: 1.15rem; margin-bottom: 6px;">Data Prep for Business Process</h4>
+          <div style="font-family: var(--font-mono); font-size: 0.775rem; color: var(--text-subtle); margin-bottom: 10px;">ID Lisensi: 709030 • Univ. Gunadarma</div>
+          <p style="font-size: 0.85rem; line-height: 1.6; color: var(--text-muted);">Pipeline identifikasi kebutuhan data bisnis operasional, pengumpulan instrumen, evaluasi kualitas, transformasi, dan validasi.</p>
+        </div>
+        <div style="display: flex; gap: 8px; margin-top: 14px;">
+          <button class="btn-tactile btn-primary-tactile" style="flex: 1; font-size: 0.8rem; padding: 8px 10px; justify-content: center;" onclick="openCertDetailsModal(7)">
+            <i data-lucide="file-check"></i> Pratinjau & Silabus
+          </button>
+          <a href="certificates/sertifikat-07-data-preparation.pdf" target="_blank" class="btn-tactile btn-secondary-tactile" style="padding: 8px 12px; font-size: 0.8rem; justify-content: center;" title="Buka Dokumen PDF di Tab Baru">
+            <i data-lucide="external-link"></i> PDF
+          </a>
+        </div>
+      </div>
+
+      <!-- Cert 8 -->
+      <div class="bento-card cert-bento-card" data-cat="data">
+        <div>
+          <div class="cert-thumb-wrap" onclick="openCertDetailsModal(8)" title="Klik untuk pratinjau sertifikat">
+            <img src="assets/certificates/sertifikat-08-business-intelligence.png" alt="Creating Business Intelligence" loading="lazy">
+            <span class="cert-pdf-badge"><i data-lucide="file-text" style="width: 12px; height: 12px;"></i> PDF Resmi</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <span class="cert-badge-tag">BUSINESS INTEL</span>
+            <span style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted);">Mei–Jun 2026</span>
+          </div>
+          <h4 style="font-size: 1.15rem; margin-bottom: 6px;">Creating Business Intelligence</h4>
+          <div style="font-family: var(--font-mono); font-size: 0.775rem; color: var(--text-subtle); margin-bottom: 10px;">ID Lisensi: 909244 • Univ. Gunadarma</div>
+          <p style="font-size: 0.85rem; line-height: 1.6; color: var(--text-muted);">Pemodal objek data analitik, perancangan arsitektur Business Intelligence, formulasi KPI, & pelaporan dashboard eksekutif.</p>
+        </div>
+        <div style="display: flex; gap: 8px; margin-top: 14px;">
+          <button class="btn-tactile btn-primary-tactile" style="flex: 1; font-size: 0.8rem; padding: 8px 10px; justify-content: center;" onclick="openCertDetailsModal(8)">
+            <i data-lucide="file-check"></i> Pratinjau & Silabus
+          </button>
+          <a href="certificates/sertifikat-08-business-intelligence.pdf" target="_blank" class="btn-tactile btn-secondary-tactile" style="padding: 8px 12px; font-size: 0.8rem; justify-content: center;" title="Buka Dokumen PDF di Tab Baru">
+            <i data-lucide="external-link"></i> PDF
+          </a>
+        </div>
+      </div>
+
+      <!-- Cert 9 -->
+      <div class="bento-card cert-bento-card" data-cat="data">
+        <div>
+          <div class="cert-thumb-wrap" onclick="openCertDetailsModal(9)" title="Klik untuk pratinjau sertifikat">
+            <img src="assets/certificates/sertifikat-09-technofair-data-analyst.png" alt="TechnoFair 11.0 – Data Analyst" loading="lazy">
+            <span class="cert-pdf-badge"><i data-lucide="file-text" style="width: 12px; height: 12px;"></i> PDF Resmi</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <span class="cert-badge-tag">DATA ANALYTICS</span>
+            <span style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted);">06 Jul 2024</span>
+          </div>
+          <h4 style="font-size: 1.15rem; margin-bottom: 6px;">TechnoFair 11.0 – Data Analyst</h4>
+          <div style="font-family: var(--font-mono); font-size: 0.775rem; color: var(--text-subtle); margin-bottom: 10px;">No: 636/PIA/TF110/BEM-FIKTI • Gunadarma</div>
+          <p style="font-size: 0.85rem; line-height: 1.6; color: var(--text-muted);">Seminar Data Analyst: Visualizing Insights. Metodologi pembersihan data mentah, visualisasi data bisnis, dan penyajian wawasan statistik.</p>
+        </div>
+        <div style="display: flex; gap: 8px; margin-top: 14px;">
+          <button class="btn-tactile btn-primary-tactile" style="flex: 1; font-size: 0.8rem; padding: 8px 10px; justify-content: center;" onclick="openCertDetailsModal(9)">
+            <i data-lucide="file-check"></i> Pratinjau & Silabus
+          </button>
+          <a href="certificates/sertifikat-09-technofair-data-analyst.pdf" target="_blank" class="btn-tactile btn-secondary-tactile" style="padding: 8px 12px; font-size: 0.8rem; justify-content: center;" title="Buka Dokumen PDF di Tab Baru">
+            <i data-lucide="external-link"></i> PDF
+          </a>
+        </div>
+      </div>
+
+      <!-- Cert 10 (NEW - Diseminasi Penelitian SI) -->
+      <div class="bento-card cert-bento-card" data-cat="web">
+        <div>
+          <div class="cert-thumb-wrap" onclick="openCertDetailsModal(10)" title="Klik untuk pratinjau sertifikat">
+            <img src="assets/certificates/sertifikat-10-diseminasi-penelitian-si.png" alt="Diseminasi Hasil Penelitian SI" loading="lazy">
+            <span class="cert-pdf-badge"><i data-lucide="file-text" style="width: 12px; height: 12px;"></i> PDF Resmi</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <span class="cert-badge-tag">RISET AKADEMIK SI</span>
+            <span style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted);">13 Mar 2026</span>
+          </div>
+          <h4 style="font-size: 1.15rem; margin-bottom: 6px;">Diseminasi Riset Sistem Informasi</h4>
+          <div style="font-family: var(--font-mono); font-size: 0.775rem; color: var(--text-subtle); margin-bottom: 10px;">Peserta Terdaftar • Prodi SI Fakultas Ilmu Komputer dan Teknologi Informasi Gunadarma</div>
+          <p style="font-size: 0.85rem; line-height: 1.6; color: var(--text-muted);">Forum ilmiah diseminasi hasil penelitian mahasiswa Sistem Informasi: telaah arsitektur sistem, publikasi riset, dan tata kelola teknologi informasi.</p>
+        </div>
+        <div style="display: flex; gap: 8px; margin-top: 14px;">
+          <button class="btn-tactile btn-primary-tactile" style="flex: 1; font-size: 0.8rem; padding: 8px 10px; justify-content: center;" onclick="openCertDetailsModal(10)">
+            <i data-lucide="file-check"></i> Pratinjau & Silabus
+          </button>
+          <a href="certificates/sertifikat-10-diseminasi-penelitian-si.pdf" target="_blank" class="btn-tactile btn-secondary-tactile" style="padding: 8px 12px; font-size: 0.8rem; justify-content: center;" title="Buka Dokumen PDF di Tab Baru">
+            <i data-lucide="external-link"></i> PDF
+          </a>
+        </div>
+      </div>
+
+      <!-- Cert 11 (TechnoFair AI) -->
+      <div class="bento-card cert-bento-card" data-cat="data">
+        <div>
+          <div class="cert-thumb-wrap" onclick="openCertDetailsModal(11)" title="Klik untuk pratinjau sertifikat">
+            <img src="assets/certificates/sertifikat-11-technofair-ai.png" alt="TechnoFair 11.0 – Artificial Intelligence" loading="lazy">
+            <span class="cert-pdf-badge"><i data-lucide="file-text" style="width: 12px; height: 12px;"></i> PDF Resmi</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <span class="cert-badge-tag">KECERDASAN BUATAN</span>
+            <span style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted);">27 Jul 2024</span>
+          </div>
+          <h4 style="font-size: 1.15rem; margin-bottom: 6px;">TechnoFair 11.0 – Artificial Intelligence</h4>
+          <div style="font-family: var(--font-mono); font-size: 0.775rem; color: var(--text-subtle); margin-bottom: 10px;">No: 807/PIA/TF110/BEM-FIKTI • Gunadarma</div>
+          <p style="font-size: 0.85rem; line-height: 1.6; color: var(--text-muted);">Seminar nasional AI: Exploring Innovations and Applications of AI. Prinsip Machine Learning terapan, otomasi komputasi cerdas, dan tren industri.</p>
+        </div>
+        <div style="display: flex; gap: 8px; margin-top: 14px;">
+          <button class="btn-tactile btn-primary-tactile" style="flex: 1; font-size: 0.8rem; padding: 8px 10px; justify-content: center;" onclick="openCertDetailsModal(11)">
+            <i data-lucide="file-check"></i> Pratinjau & Silabus
+          </button>
+          <a href="certificates/sertifikat-11-technofair-ai.pdf" target="_blank" class="btn-tactile btn-secondary-tactile" style="padding: 8px 12px; font-size: 0.8rem; justify-content: center;" title="Buka Dokumen PDF di Tab Baru">
+            <i data-lucide="external-link"></i> PDF
+          </a>
+        </div>
+      </div>
+
+      <!-- Cert 12 (NEW - Volunteer TBM PoliMedia) -->
+      <div class="bento-card cert-bento-card" data-cat="volunteer">
+        <div>
+          <div class="cert-thumb-wrap" onclick="openCertDetailsModal(12)" title="Klik untuk pratinjau sertifikat">
+            <img src="assets/certificates/sertifikat-12-volunteer-tbm-polimedia.png" alt="Volunteer Taman Baca Masyarakat" loading="lazy">
+            <span class="cert-pdf-badge"><i data-lucide="file-text" style="width: 12px; height: 12px;"></i> PDF Resmi</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <span class="cert-badge-tag">PENGABDIAN SOSIAL</span>
+            <span style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted);">18 Nov 2023</span>
+          </div>
+          <h4 style="font-size: 1.15rem; margin-bottom: 6px;">Volunteer Taman Baca Masyarakat</h4>
+          <div style="font-family: var(--font-mono); font-size: 0.775rem; color: var(--text-subtle); margin-bottom: 10px;">HIMA Penerbitan PoliMedia • Jakarta Selatan</div>
+          <p style="font-size: 0.85rem; line-height: 1.6; color: var(--text-muted);">Pengabdian masyarakat sebagai sukarelawan Taman Bacaan di Srengseng Sawah: pendampingan literasi anak, tata kelola buku, dan kegiatan edukatif warga.</p>
+        </div>
+        <div style="display: flex; gap: 8px; margin-top: 14px;">
+          <button class="btn-tactile btn-primary-tactile" style="flex: 1; font-size: 0.8rem; padding: 8px 10px; justify-content: center;" onclick="openCertDetailsModal(12)">
+            <i data-lucide="file-check"></i> Pratinjau & Silabus
+          </button>
+          <a href="certificates/sertifikat-12-volunteer-tbm-polimedia.pdf" target="_blank" class="btn-tactile btn-secondary-tactile" style="padding: 8px 12px; font-size: 0.8rem; justify-content: center;" title="Buka Dokumen PDF di Tab Baru">
+            <i data-lucide="external-link"></i> PDF
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Verification Info Note -->
+    <div class="bento-card" style="margin-bottom: 24px; background: var(--bg-elevated);">
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--primary-light); color: var(--primary-dark); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+          <i data-lucide="shield-check"></i>
+        </div>
+        <div>
+          <strong style="color: var(--text-main); font-size: 0.95rem;">Otentikasi & Verifikasi Integritas Kredensial</strong>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin: 2px 0 0 0;">
+            Seluruh 12 sertifikasi di atas telah melalui evaluasi kompetensi terstruktur oleh Universitas Gunadarma dan instansi terkait, dilengkapi identitas lisensi unik (<em>Credential ID</em>) serta dokumen digital PDF otentik yang dapat diunduh secara mandiri maupun terpadu.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Expanded Modern Executive Footer -->
+    <div class="footer-wrapper">
+      <footer class="footer-expanded-card">
+        <div class="footer-top-grid">
+          
+          <!-- Left Column: Big Brand Name, Quote & 7 Social Media Icon Buttons -->
+          <div class="footer-brand-col">
+            <h3 class="footer-hero-name">Danendra Daniswara<span>.</span></h3>
+            <p class="footer-hero-quote">
+              the only way to do great work is to love what you do. — Steve Jobs
+            </p>
+            
+            <!-- 7 Social Media Buttons in Exact Order -->
+            <div class="footer-social-row">
+              <!-- 1. GitHub -->
+              <a href="https://github.com/danendradanis" target="_blank" rel="noopener" class="footer-social-btn" title="GitHub (danendradanis)" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+              </a>
+
+              <!-- 2. LinkedIn -->
+              <a href="https://www.linkedin.com/in/muhammad-danendra-daniswara-effendi-56b58534b/" target="_blank" rel="noopener" class="footer-social-btn" title="LinkedIn (Muhammad Danendra Daniswara Effendi)" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                </svg>
+              </a>
+
+              <!-- 3. Instagram -->
+              <a href="https://www.instagram.com/danendrdns" target="_blank" rel="noopener" class="footer-social-btn" title="Instagram (@danendrdns)" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+                </svg>
+              </a>
+
+              <!-- 4. Threads -->
+              <a href="https://www.threads.net/@danendrdns" target="_blank" rel="noopener" class="footer-social-btn" title="Threads (@danendrdns)" aria-label="Threads">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M12.75 1.5c-5.7 0-10.5 4.8-10.5 10.5s4.8 10.5 10.5 10.5c3.2 0 6.1-1.4 8.1-3.7l-2.4-1.9c-1.5 1.7-3.6 2.7-5.7 2.7-4.2 0-7.5-3.3-7.5-7.5s3.3-7.5 7.5-7.5c4.1 0 7 2.8 7 7.4 0 2.3-1.1 3.7-2.6 3.7-1 0-1.7-.7-1.4-2l.9-4.2h-2.9l-.3 1.4c-.4-.9-1.3-1.4-2.4-1.4-2.5 0-4.4 2.3-4.4 4.8 0 2.2 1.6 3.9 3.7 3.9 1.3 0 2.4-.7 3-1.7.3 1.3 1.5 2.1 3 2.1 3.2 0 5.6-2.6 5.6-6.4 0-6.1-4.7-10.7-11.2-10.7zM11.9 15c-1 0-1.8-.8-1.8-1.9 0-1.2.9-2.1 2-2.1.9 0 1.7.7 1.7 1.8 0 1.3-.9 2.2-1.9 2.2z"/>
+                </svg>
+              </a>
+
+              <!-- 5. Telegram -->
+              <a href="https://t.me/+6285219465754" target="_blank" rel="noopener" class="footer-social-btn" title="Telegram (+6285219465754)" aria-label="Telegram">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18.25.25 0 0 0-.21-.02c-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.77-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+                </svg>
+              </a>
+
+              <!-- 6. X (formerly Twitter) -->
+              <a href="https://x.com/deweeeeeeeeeeee" target="_blank" rel="noopener" class="footer-social-btn" title="X (@deweeeeeeeeeeee)" aria-label="X">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+              </a>
+
+              <!-- 7. Mail -->
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=muhdanendra12@gmail.com," target="_blank" rel="noopener" class="footer-social-btn" title="Kirim Email via Gmail (muhdanendra12@gmail.com)" aria-label="Email">
+                <i data-lucide="mail"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: 3 Nav Link Columns -->
+          <div class="footer-nav-grid">
+            <!-- Col 1: Pages -->
+            <div>
+              <h4 class="footer-col-title">Pages</h4>
+              <ul class="footer-col-links">
+                <li><a href="index.html" class="footer-col-link">Home</a></li>
+                <li><a href="about.html" class="footer-col-link">About</a></li>
+                <li><a href="skills.html" class="footer-col-link">Skills</a></li>
+                <li><a href="contact.html" class="footer-col-link">Contact</a></li>
+              </ul>
+            </div>
+
+            <!-- Col 2: Explore -->
+            <div>
+              <h4 class="footer-col-title">Explore</h4>
+              <ul class="footer-col-links">
+                <li><a href="projects.html" class="footer-col-link">Portfolio</a></li>
+                <li><a href="experience.html" class="footer-col-link">Experience</a></li>
+                <li><a href="certifications.html" class="footer-col-link">Certificates</a></li>
+                <li><button class="footer-col-link" onclick="openResumeModal()">Curriculum Vitae</button></li>
+              </ul>
+            </div>
+
+            <!-- Col 3: Connect -->
+            <div>
+              <h4 class="footer-col-title">Connect</h4>
+              <ul class="footer-col-links">
+                <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=muhdanendra12@gmail.com," target="_blank" rel="noopener" class="footer-col-link">Direct Email</a></li>
+                <li><a href="https://www.linkedin.com/in/muhammad-danendra-daniswara-effendi-56b58534b/" target="_blank" rel="noopener" class="footer-col-link">LinkedIn Profile</a></li>
+                <li><a href="https://github.com/danendradanis" target="_blank" rel="noopener" class="footer-col-link">GitHub Code</a></li>
+                <li><a href="contact.html" class="footer-col-link">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Footer Bottom Bar -->
+        <div class="footer-bottom-bar">
+          <div class="footer-bottom-copy">
+            © 2026 Muhammad Danendra Daniswara Effendi • S1 Sistem Informasi Universitas Gunadarma
+          </div>
+          <button class="footer-back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+            <i data-lucide="arrow-up" style="width: 14px; height: 14px;"></i> Back to Top
+          </button>
+        </div>
+      </footer>
+    </div>
+
+  </main>
+
+  <!-- Universal Modal Dialog for Syllabus & Certificate -->
+  <div class="modal-backdrop" id="universalModalBackdrop" role="dialog" aria-modal="true">
+    <div class="modal-content-card">
+      <button class="control-btn" style="position: absolute; top: 18px; right: 18px;" onclick="closeUniversalModal()" aria-label="Close modal">
+        <i data-lucide="x"></i>
+      </button>
+      <div id="modalDynamicBody"></div>
+    </div>
+  </div>
+
+  <div class="toast-popup" id="toastPopup">
+    <i data-lucide="check-circle-2" style="color: var(--primary); width: 18px; height: 18px;"></i>
+    <span id="toastText">Notification</span>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
